@@ -1,7 +1,7 @@
 {
-  "name": "wk-06-react-blog",
+  "name": "my-awesome-therapist-app",
   "version": "1.0.0",
-  "description": "Assignment for week six",
+  "description": "My Therapist App is designed with the independent therapist and their practice in mind. The app will include views for the therapist (authorization required), for clients (authorization required), and for the public (non-authenticated users).",
   "main": "index.js",
   "scripts": {
     "webpack:dev": "webpack -d",
@@ -13,16 +13,6 @@
     "prod:start": "npm run postinstall && npm start",
     "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
-  "author": "Joni Weiss <me@joniweiss.com> (http://joniweiss.com)",
-  "license": "ISC",
-  "bugs": {
-    "url": ""
-  },
-  "homepage": "",
   "devDependencies": {
     "webpack-dev-server": "^1.16.2"
   },
@@ -53,5 +43,15 @@
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoniWeiss-tiy/My-Awesome-Therapist-App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoniWeiss-tiy/My-Awesome-Therapist-App/issues"
+  },
+  "homepage": "https://github.com/JoniWeiss-tiy/My-Awesome-Therapist-App#readme"
 }
