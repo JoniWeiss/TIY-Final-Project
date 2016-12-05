@@ -5,7 +5,7 @@ var webpack = require('webpack');
 var DIST_DIR = path.resolve(__dirname, "dist");
 var SRC_DIR = path.resolve(__dirname, "src");
 
-var config = {
+module.exports = {
   entry: SRC_DIR + "/app/index.js",
   output: {
     path: DIST_DIR + "/app",
@@ -45,17 +45,12 @@ var config = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.ProvidePlugin({'React': 'react'})
   ] : [
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(true),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production')
       }
     }),
-    new webpack.optimize.UglifyJsPlugin({}),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.ProvidePlugin({'React': 'react'})
-  ]
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(true),
+    new webpack.optimize.UglifyJsPlugin({})  ]
 };
-
-module.exports = config;
