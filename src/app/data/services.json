@@ -1,44 +1,44 @@
 {"services" :
     [
       {
-        "service-name"  : "1 Hour Massage",
-        "service-type"  : "massage",
-        "location-type" : "incall",
+        "serviceName"  : "1 Hour Massage",
+        "serviceType"  : "massage",
+        "locationType" : "incall",
         "duration"     : 60,
         "price"        : 60
       },
       {
-        "service-name"  : "1 Hour Massage",
-        "service-type"  : "massage",
-        "location-type" : "outcall",
+        "serviceName"  : "1 Hour Massage",
+        "serviceType"  : "massage",
+        "locationType" : "outcall",
         "duration"     : 60,
         "price"        : 90
       },
       {
-        "service-name"  : "90 Minute Massage",
-        "service-type"  : "massage",
-        "location-type" : "incall",
+        "serviceName"  : "90 Minute Massage",
+        "serviceType"  : "massage",
+        "locationType" : "incall",
         "duration"     : 90,
         "price"        : 90
       },
       {
-        "service-name"  : "90 Minute Massage",
-        "service-type"  : "massage",
-        "location-type" : "outcall",
+        "serviceName"  : "90 Minute Massage",
+        "serviceType"  : "massage",
+        "locationType" : "outcall",
         "duration"     : 90,
         "price"        : 135
       },
       {
-        "service-name"  : "2 Hour Massage",
-        "service-type"  : "massage",
-        "location-type" : "incall",
+        "serviceName"  : "2 Hour Massage",
+        "serviceType"  : "massage",
+        "locationType" : "incall",
         "duration"     : 120,
         "price"        : 120
       },
       {
-        "service-name"  : "2 Hour Massage",
-        "service-type"  : "massage",
-        "location-type" : "outcall",
+        "serviceName"  : "2 Hour Massage",
+        "serviceType"  : "massage",
+        "locationType" : "outcall",
         "duration"     : 120,
         "price"        : 180
       }

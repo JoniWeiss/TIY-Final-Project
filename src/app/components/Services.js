@@ -19,9 +19,6 @@ export default class Services extends React.Component {
       asArray: true,
       then(){
         this.setState({loading: false})
-      },
-      onFailure() {
-        console.log("Error: ", error)
       }
     });
   }
@@ -49,35 +46,46 @@ export default class Services extends React.Component {
   base.fetch('services', {
     context: this,
     asArray: true
+  }).then(data => {
+    console.log("getServices(success!): ", data);
+  }).catch(error => {
+    //handle error
+    console.log("getServices(error): ", error);
   })
 }
 
   render() {
-    {/*let listServices = this.state.services.map((item, idx) => {
-      return (
-        <li key={idx} className="list-item">
-          <button className="removeItem"
-            onClick={this.removeItem.bind(idx)}
-          />
-          <span>
-            {item.service-name}
-          </span>
-        </li>
-      )
-    })*/}
     return (
       <div>
         <h2>Services</h2>
-        <div>
-          <ul>
-            {/*this.state.services*/}
-          </ul>
-        </div>
-
         <h3>At my location</h3>
         <p></p>
+          <ul>
+            {this.state.services.filter((dataObj, idx) => {
+              return dataObj.locationType === 'incall'
+            })
+            .map((dataObj, idx) => {
+              return (
+                <li key={idx}>
+                  <p>{dataObj.serviceName}  {dataObj.duration}</p>
+                </li>
+              )
+            })}
+          </ul>
+
         <h3>At your location</h3>
-        <p></p>
+          <ul>
+            {this.state.services.filter((dataObj, idx) => {
+              return dataObj.locationType === 'outcall'
+            })
+            .map((dataObj, idx) => {
+              return (
+                <li key={idx}>
+                  <p>{dataObj.serviceName}  {dataObj.duration}</p>
+                </li>
+              )
+            })}
+          </ul>
         <h3>Surcharges</h3>
         <p></p>
       </div>
