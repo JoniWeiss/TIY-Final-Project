@@ -1,0 +1,44 @@
+{"people" :
+    [
+      {
+        "name"  : {
+          "first" : "Joni",
+          "last"  : "Weiss"
+        },
+        "imageUrl" : "//joniweiss.com/wp-content/uploads/2016/12/joni-ironyard-rev-e1481057491758.png",
+        "gender"   : "female",
+        "phones"  : {
+          "mobile" : "801-884-7450"
+        },
+        "emails"  : {
+          "office" : "me@joniweiss.com"
+        },
+        "address" : {
+          "street1" : "559 N 200 W",
+          "street2" : "",
+          "city"    : "Salt Lake City",
+          "state"   : "UT",
+          "zip"     : "84103"
+        },
+        "prefs" : {
+          "isLotionOK" : true,
+          "isOilOK"   : true,
+          "allergies" : "none",
+          "musicPrefs" : "anything but enya",
+          "note" : "This is a note"
+        },
+        "emergencyContact : {
+          "name"    : "Jane Preece",
+          "phone"   : "801-910-3636",
+          "relationship" : "sister"
+        },
+        "isrepeat" : true,
+        "discount" : "none",
+        "notes" : "This is a note",
+        "isClient" : true,
+        "isTherapist" : true,
+        "isAdmin" : true,
+        "doNotBook" : false
+      }
+    ]
+}

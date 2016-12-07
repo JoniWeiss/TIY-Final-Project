@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BrowserRouter as Router, browserHistory, Link, Match, Miss } from 'react-router';
+import { BrowserRouter as Router, Redirect, browserHistory, Link, Match, Miss } from 'react-router'
 
 import Header from './Header';
 import Footer from './Footer';
@@ -12,11 +12,13 @@ import About from './About';
 import ContactUs from './ContactUs';
 import NotFound from './NotFound';
 
+
 import AppSass from '../styles/App.sass';
 
-export default class Root extends React.Component {
+export default class App extends React.Component {
   render () {
     return (
+
       <Router history={browserHistory}>
         <div className='container'>
           <Header />
@@ -26,6 +28,11 @@ export default class Root extends React.Component {
           <Match pattern='/about' component={About}/>
           <Match pattern='/contact-us' component={ContactUs}/>
           <Match pattern='/blog' component={Blog}/>
+          {/*<Match pattern="/"
+            render={(defaultProps) => <MyComponent
+            myProp = {myProp}
+            {...defaultProps} />
+          }/>*/}
           <Miss component={NotFound}/>
           <Footer />
         </div>

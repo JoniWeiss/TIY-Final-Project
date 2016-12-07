@@ -1,0 +1,14 @@
+{"schedule" :
+    [
+      {
+        "date"        : "2017-01-05",
+        "client"      : "Brenda",
+        "therapist"   : "Joni",
+        "location"    : "LotusMind Studio",
+        "isOutcall"   : false,
+        "duration"    : 90,
+        "note"        : "Some note",
+        "bookedBt"    : "Joni"
+      }
+    ]
+}

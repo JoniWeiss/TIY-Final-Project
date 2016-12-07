@@ -1,8 +1,8 @@
 import React from 'react';
 import { base } from '../config/constants'
+import moment from 'moment'
 import { timeNow } from '../helpers/date-helpers'
 
-const moment = require('moment')
 
 export default class Services extends React.Component {
   constructor(props){
@@ -43,51 +43,60 @@ export default class Services extends React.Component {
   }
 
   getServices(){
-  base.fetch('services', {
-    context: this,
-    asArray: true
-  }).then(data => {
-    console.log("getServices(success!): ", data);
-  }).catch(error => {
-    //handle error
-    console.log("getServices(error): ", error);
-  })
-}
+    base.fetch('services', {
+      context: this,
+      asArray: true
+    }).then(data => {
+      console.log("getServices(success!): ", data);
+    }).catch(error => {
+      //handle error
+      console.log("getServices(error): ", error);
+    })
+  }
+
+  isIncall(obj) {
+    if ( obj.locationType === "incall" ) {
+      return obj
+    }
+  }
+
+  isOutcall(obj) {
+    if ( obj.locationType === "outcall" ) {
+      return obj
+    }
+  }
 
   render() {
     return (
       <div>
+        <h2>Today is:</h2>
+        <p>{timeNow()}</p>
+
         <h2>Services</h2>
         <h3>At my location</h3>
-        <p></p>
-          <ul>
-            {this.state.services.filter((dataObj, idx) => {
-              return dataObj.locationType === 'incall'
-            })
-            .map((dataObj, idx) => {
-              return (
-                <li key={idx}>
-                  <p>{dataObj.serviceName}  {dataObj.duration}</p>
-                </li>
-              )
-            })}
-          </ul>
+        <ul>
+          {this.state.services.filter(this.isIncall)
+          .map((obj, idx) => {
+            return (
+              <li key={idx}>
+                <p>{obj.serviceName}  ${obj.price}</p>
+              </li>
+            )
+          })}
+        </ul>
 
         <h3>At your location</h3>
-          <ul>
-            {this.state.services.filter((dataObj, idx) => {
-              return dataObj.locationType === 'outcall'
-            })
-            .map((dataObj, idx) => {
-              return (
-                <li key={idx}>
-                  <p>{dataObj.serviceName}  {dataObj.duration}</p>
-                </li>
-              )
-            })}
-          </ul>
-        <h3>Surcharges</h3>
-        <p></p>
+        <ul>
+          {this.state.services.filter(this.isOutcall)
+          .map((obj, idx) => {
+            return (
+              <li key={idx}>
+                <p>{obj.serviceName}  ${obj.price}</p>
+              </li>
+            )
+          })}
+        </ul>
+
       </div>
     )
   }

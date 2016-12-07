@@ -1,0 +1,15 @@
+{"availability" :
+  [
+    {
+      "therapist"   : "Joni",
+      "location"    : "LotusMind Studio",
+      "date"        : "2017-01-05",
+      "client"      : "Brenda",
+      "startTime"   : false,
+      "endTime"     : 90,
+      "isRecurring" : true,
+      "recurrence"  : "weekly",
+      "note"        : "Some note",
+    }
+  ]
+}

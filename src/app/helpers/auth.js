@@ -1,7 +1,7 @@
 import { base } from '../config/constants'
 
 // auth
-var authHandler = function(error, user) {
+let authHandler = function(user, error) {
   if(error) {
     console.log("error: ", error)
   }
@@ -12,22 +12,52 @@ export function auth (email, pw) {
   return base.createUser({
     email: email,
     password: pw
-  }, authHandler(email, pw))
+  }, authHandler(email))
 }
 
 export function login (email, pw) {
   return base.authWithPassword({
     email    : email,
     password : pw
-  }, authHandler(email, pw));
+  }, authHandler(email));
 }
+
+
+// Create
+base.createUser({
+  email: 'bobtony@firebase.com',
+  password: 'correcthorsebatterystaple'
+}, userHandler);
+
+
+// Reset Password
+base.resetPassword({
+  email: 'bobtony@firebase.com'
+}, errorHandler);
+
+
 //
-// let authState = fbAuth.onAuthStateChange(firebaseUser => {})
+// tylermcginnis/react-router-firebase-auth
 //
-// export function logout () {
-//   return fbAuth.signOut()
+// react-router-firebase-auth/src/helpers/auth.js
+//
+// Tyler McGinnis Upgrade to React 15.4, Firebase 3.6, and React Router 4
+//
+// import { ref, firebaseAuth } from '../config/constants'
+//
+// export function auth (email, pw) {
+//   return firebaseAuth().createUserWithEmailAndPassword(email, pw)
+//     .then(saveUser)
+//     .catch((error) => console.log('Oops', error))
 // }
 //
+// export function logout () {
+//   return firebaseAuth().signOut()
+// }
+//
+// export function login (email, pw) {
+//   return firebaseAuth().signInWithEmailAndPassword(email, pw)
+// }
 //
 // export function saveUser (user) {
 //   return ref.child(`users/${user.uid}/info`)
@@ -37,3 +67,4 @@ export function login (email, pw) {
 //     })
 //     .then(() => user)
 // }
+//

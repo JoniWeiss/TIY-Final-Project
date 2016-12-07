@@ -1,0 +1,20 @@
+{"locations" :
+    [
+      {
+        "name"    : "LotusMind Studio",
+        "address" : "2243 E 4500 S",
+        "suite"   : "310",
+        "city"    : "Holladay",
+        "state"   : "Utah",
+        "zip"     : "84117"
+      },
+      {
+        "name"    : "Pride Massage",
+        "address" : "717 S 300 W",
+        "suite"   : "D",
+        "city"    : "Salt Lake City",
+        "state"   : "Utah",
+        "zip"     : "84111"
+      }
+    ]
+}
