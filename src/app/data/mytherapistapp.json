@@ -217,6 +217,16 @@
             "bookedBy": "Joni"
         },
         {
+            "date": "2016-12-07T13:00:00-07:00",
+            "client": "Brenda",
+            "therapist": "Joni",
+            "location": "LotusMind Studio",
+            "isOutcall": false,
+            "duration": 90,
+            "note": "Some note",
+            "bookedBy": "Joni"
+        },
+        {
             "date": "2016-12-07T15:00:00-07:00",
             "client": "Brenda",
             "therapist": "Joni",

@@ -63,7 +63,7 @@
 /******/ 	}
 /******/
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "005ddb209f0cf337edc2"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "d68c1511e2ee51d4d5a8"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/
@@ -22581,7 +22581,7 @@
 	
 	var _Services2 = _interopRequireDefault(_Services);
 	
-	var _Schedule = __webpack_require__(/*! ./Schedule */ 352);
+	var _Schedule = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./Schedule\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	
 	var _Schedule2 = _interopRequireDefault(_Schedule);
 	
@@ -70405,7 +70405,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          (0, _dateHelpers.timeNow)()
+	          (0, _dateHelpers.formatLongDate)()
 	        ),
 	        _react2.default.createElement(
 	          'h2',
@@ -72348,7 +72348,7 @@
   \*****************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -72356,10 +72356,13 @@
 	exports.timeNow = timeNow;
 	exports.getDay = getDay;
 	exports.formatDayOfWeek = formatDayOfWeek;
-	exports.formatLongDay = formatLongDay;
-	exports.formatShortDay = formatShortDay;
+	exports.formatLongDate = formatLongDate;
+	exports.formatShortDate = formatShortDate;
 	exports.formatTime = formatTime;
 	var moment = __webpack_require__(/*! moment */ 229);
+	
+	var TODAY = exports.TODAY = timeNow("YYYYMMDD");
+	var TOMORROW = exports.TOMORROW = moment().add(1, 'days').format("YYYYMMDD");
 	
 	function timeNow(formatStr) {
 	  var now = moment().format(formatStr);
@@ -72377,11 +72380,11 @@
 	  return moment(date).format('dddd');
 	}
 	
-	function formatLongDay(date) {
+	function formatLongDate(date) {
 	  return moment(date).format('MMMM Do, Y');
 	}
 	
-	function formatShortDay(date) {
+	function formatShortDate(date) {
 	  return moment(date).format('MM/DD/YY');
 	}
 	
@@ -72390,171 +72393,7 @@
 	}
 
 /***/ },
-/* 352 */
-/*!****************************************!*\
-  !*** ./src/app/components/Schedule.js ***!
-  \****************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _constants = __webpack_require__(/*! ../config/constants */ 342);
-	
-	var _moment = __webpack_require__(/*! moment */ 229);
-	
-	var _moment2 = _interopRequireDefault(_moment);
-	
-	var _dateHelpers = __webpack_require__(/*! ../helpers/date-helpers */ 351);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var Schedule = function (_Component) {
-	  _inherits(Schedule, _Component);
-	
-	  function Schedule(props) {
-	    _classCallCheck(this, Schedule);
-	
-	    var _this = _possibleConstructorReturn(this, (Schedule.__proto__ || Object.getPrototypeOf(Schedule)).call(this, props));
-	
-	    _this.state = {
-	      schedule: [],
-	      loading: true
-	    };
-	    return _this;
-	  }
-	
-	  _createClass(Schedule, [{
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      this.ref = _constants.base.syncState('schedule', {
-	        context: this,
-	        state: 'schedule',
-	        asArray: true,
-	        then: function then() {
-	          this.setState({ loading: false });
-	        }
-	      });
-	    }
-	  }, {
-	    key: 'componentWillUnmount',
-	    value: function componentWillUnmount() {
-	      _constants.base.removeBinding(this.ref);
-	    }
-	
-	    //TODO: This needs to work for objects - not arrays
-	
-	  }, {
-	    key: 'handleAddItem',
-	    value: function handleAddItem(newItem) {
-	      this.setState({
-	        schedule: this.state.schedule.concat([newItem])
-	      });
-	    }
-	
-	    //TODO: This needs to work for objects - not arrays
-	
-	  }, {
-	    key: 'handleRemoveItem',
-	    value: function handleRemoveItem(index) {
-	      var newList = this.state.schedule;
-	      newList.splice(index, 1);
-	      this.setState({
-	        schedule: newList
-	      });
-	    }
-	  }, {
-	    key: 'getSchedule',
-	    value: function getSchedule() {
-	      _constants.base.fetch('schedule', {
-	        context: this,
-	        asArray: true
-	      }).then(function (data) {
-	        console.log("getSchedule(success!): ", data);
-	      }).catch(function (error) {
-	        //handle error
-	        console.log("getSchedule(error): ", error);
-	      });
-	    }
-	  }, {
-	    key: 'displaySchedule',
-	    value: function displaySchedule(obj, idx) {
-	      console.log("displaySchedule: ", obj);
-	      return _react2.default.createElement(
-	        'li',
-	        { key: idx },
-	        _react2.default.createElement(
-	          'p',
-	          null,
-	          obj.date,
-	          '  $',
-	          obj.duration
-	        )
-	      );
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          'h2',
-	          null,
-	          'Today is:'
-	        ),
-	        _react2.default.createElement(
-	          'p',
-	          null,
-	          (0, _dateHelpers.timeNow)()
-	        ),
-	        _react2.default.createElement(
-	          'h2',
-	          null,
-	          'Schedule'
-	        ),
-	        _react2.default.createElement(
-	          'ul',
-	          null,
-	          this.state.schedule.filter(this.isIncall).map(function (obj, idx) {
-	            return _react2.default.createElement(
-	              'li',
-	              { key: idx },
-	              _react2.default.createElement(
-	                'p',
-	                null,
-	                obj.serviceName,
-	                '  $',
-	                obj.price
-	              )
-	            );
-	          })
-	        )
-	      );
-	    }
-	  }]);
-	
-	  return Schedule;
-	}(_react.Component);
-	
-	exports.default = Schedule;
-
-/***/ },
+/* 352 */,
 /* 353 */
 /*!*************************************!*\
   !*** ./src/app/components/About.js ***!

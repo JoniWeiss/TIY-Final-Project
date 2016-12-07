@@ -24,6 +24,10 @@ export default class Schedule extends Component {
       context: this,
       state: 'schedule',
       asArray: true,
+      queries: {
+        orderByChild: 'date'
+      },
+      startAt: moment().format(),
       then(){
         this.setState({loading: false})
       }
@@ -61,8 +65,20 @@ export default class Schedule extends Component {
     })
   }
 
+  getNextAppointment() {
+    let timeDiff = 0;
+    this.state.schedule.filter((c,i,a) => {
+      if ( moment(c.date).format("YYYYMMDD") === TODAY ) {
+
+      }
+    })
+  }
+
+
   displayNext(obj) {
-    if ( moment(obj.date).format("YYYYMMDD") === TODAY ) {
+    if (
+      moment(obj.date).format("YYYYMMDD") === TODAY
+    ) {
       // find next appt from now
       return obj
     }

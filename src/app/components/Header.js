@@ -7,7 +7,6 @@ export default class Header extends React.Component {
     return(
       <header>
         <Nav />
-        <h1 className="header">My Awesome Therapist</h1>
       </header>
     );
   }
