@@ -43,7 +43,7 @@
             "price": 180
         }
     ],
-    "people": [
+    "users": [
         {
             "name": {
                 "first": "Joni",
@@ -85,6 +85,14 @@
             "doNotBook": false
         }
     ],
+    "therapistDetail": {
+      "name": {
+          "first": "Grace",
+          "last": "Hopper"
+      },
+      "phone": "415-555-1212",
+      "email": "me@gracehopper.com"
+    },
     "blog": [
         {
             "title": "Sass, Flexbox, Viewports and Responsive Design",
@@ -199,14 +207,54 @@
     ],
     "schedule": [
         {
-            "date": "2017-01-05",
+            "date": "2016-12-07T17:00:00-07:00",
             "client": "Brenda",
             "therapist": "Joni",
             "location": "LotusMind Studio",
             "isOutcall": false,
             "duration": 90,
             "note": "Some note",
-            "bookedBt": "Joni"
+            "bookedBy": "Joni"
+        },
+        {
+            "date": "2016-12-07T15:00:00-07:00",
+            "client": "Brenda",
+            "therapist": "Joni",
+            "location": "LotusMind Studio",
+            "isOutcall": false,
+            "duration": 90,
+            "note": "Some note",
+            "bookedBy": "Joni"
+        },
+        {
+            "date": "2016-12-08T15:00:00-07:00",
+            "client": "Brenda",
+            "therapist": "Joni",
+            "location": "LotusMind Studio",
+            "isOutcall": false,
+            "duration": 90,
+            "note": "Some note",
+            "bookedBy": "Joni"
+        },
+        {
+            "date": "2016-12-08T13:00:00-07:00",
+            "client": "Brenda",
+            "therapist": "Joni",
+            "location": "LotusMind Studio",
+            "isOutcall": false,
+            "duration": 90,
+            "note": "Some note",
+            "bookedBy": "Joni"
+        },
+        {
+            "date": "2017-01-07T10:00:00-07:00",
+            "client": "Brenda",
+            "therapist": "Joni",
+            "location": "LotusMind Studio",
+            "isOutcall": false,
+            "duration": 90,
+            "note": "Some note",
+            "bookedBy": "Joni"
         }
     ],
     "availability": [

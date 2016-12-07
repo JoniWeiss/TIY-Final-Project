@@ -36,7 +36,7 @@ export default class Nav extends React.Component {
             <ul>
               <li><Link to='/'>My Awesome Therapist — Home</Link></li>
               <li><Link to='/services'>Services</Link></li>
-              <li><Link to='/book-me'>Book Me</Link></li>
+              <li><Link to='/schedule'>Schedule</Link></li>
               <li><Link to='/about'>About</Link></li>
               <li><Link to='/contact-us'>Contact Us</Link></li>
               <li><Link to='/blog'>Blog</Link></li>

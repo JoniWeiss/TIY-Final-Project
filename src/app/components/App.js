@@ -7,7 +7,7 @@ import Footer from './Footer';
 import Home from './Home';
 import Blog from './Blog';
 import Services from './Services';
-import BookMe from './BookMe';
+import Schedule from './Schedule';
 import About from './About';
 import ContactUs from './ContactUs';
 import NotFound from './NotFound';
@@ -24,7 +24,7 @@ export default class App extends React.Component {
           <Header />
           <Match exactly pattern='/' component={Home}/>
           <Match pattern='/services' component={Services}/>
-          <Match pattern='/book-me' component={BookMe}/>
+          <Match pattern='/schedule' component={Schedule}/>
           <Match pattern='/about' component={About}/>
           <Match pattern='/contact-us' component={ContactUs}/>
           <Match pattern='/blog' component={Blog}/>

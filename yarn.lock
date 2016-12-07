@@ -1631,7 +1631,7 @@ hawk@~3.1.3:
     hoek "2.x.x"
     sntp "1.x.x"
 
-history@^4.3.0:
+history@^4.3.0, history@^4.4.1:
   version "4.4.1"
   resolved "https://registry.yarnpkg.com/history/-/history-4.4.1.tgz#88c2634b6b8cc68252258a7ddaa3f5f193641955"
   dependencies:
@@ -3006,7 +3006,7 @@ re-base@^2.4.0:
   dependencies:
     firebase "^3.5.2"
 
-react-addons-create-fragment@^15.0.0:
+react-addons-create-fragment@^15.0.0, react-addons-create-fragment@^15.4.1:
   version "15.4.1"
   resolved "https://registry.yarnpkg.com/react-addons-create-fragment/-/react-addons-create-fragment-15.4.1.tgz#596fde66cf7f375b5dad3c36ff6efe19c0ac47e7"
 
@@ -3067,7 +3067,7 @@ react-proxy@^3.0.0-alpha.0:
   dependencies:
     lodash "^4.6.1"
 
-react-router@^4.0.0-alpha.5:
+react-router@^4.0.0-alpha.6:
   version "4.0.0-alpha.6"
   resolved "https://registry.yarnpkg.com/react-router/-/react-router-4.0.0-alpha.6.tgz#239fcf9a6ba7997021022c9b51d72d370f7b6bf4"
   dependencies:

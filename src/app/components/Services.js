@@ -1,7 +1,7 @@
 import React from 'react';
 import { base } from '../config/constants'
 import moment from 'moment'
-import { timeNow } from '../helpers/date-helpers'
+import { timeNow, formatLongDate } from '../helpers/date-helpers'
 
 
 export default class Services extends React.Component {
@@ -70,7 +70,7 @@ export default class Services extends React.Component {
     return (
       <div>
         <h2>Today is:</h2>
-        <p>{timeNow()}</p>
+        <p>{formatLongDate()}</p>
 
         <h2>Services</h2>
         <h3>At my location</h3>
