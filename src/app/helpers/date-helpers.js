@@ -23,8 +23,16 @@ export function formatLongDate(date) {
   return moment(date).format('MMMM Do, Y')
 }
 
+export function formatLongDateTime(date) {
+  return moment(date).format('MMMM Do, Y h:mm A')
+}
+
 export function formatShortDate(date) {
   return moment(date).format('MM/DD/YY')
+}
+
+export function formatShortDateTime(date) {
+  return moment(date).format('MM/DD/YY h:mm A')
 }
 
 export function formatTime(date) {

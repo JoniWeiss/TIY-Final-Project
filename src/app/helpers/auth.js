@@ -24,16 +24,16 @@ export function login (email, pw) {
 
 
 // Create
-base.createUser({
-  email: 'bobtony@firebase.com',
-  password: 'correcthorsebatterystaple'
-}, userHandler);
+// base.createUser({
+//   email: 'bobtony@firebase.com',
+//   password: 'correcthorsebatterystaple'
+// }, userHandler);
 
 
 // Reset Password
-base.resetPassword({
-  email: 'bobtony@firebase.com'
-}, errorHandler);
+// base.resetPassword({
+//   email: 'bobtony@firebase.com'
+// }, errorHandler);
 
 
 //

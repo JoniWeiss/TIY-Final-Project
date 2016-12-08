@@ -1,6 +1,7 @@
 
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { base } from '../config/constants'
+import NewAppointment from './NewAppointment'
 import moment from 'moment'
 import {
   TODAY,
@@ -8,7 +9,9 @@ import {
   timeNow,
   formatDayOfWeek,
   formatLongDate,
+  formatLongDateTime,
   formatShortDate,
+  formatShortDateTime,
   formatTime } from '../helpers/date-helpers'
 
 export default class Schedule extends Component {
@@ -53,35 +56,13 @@ export default class Schedule extends Component {
     })
   }
 
-  getSchedule(){
-    base.fetch('schedule', {
-      context: this,
-      asArray: true
-    }).then(data => {
-      console.log("getSchedule(success!): ", data);
-    }).catch(error => {
-      //handle error
-      console.log("getSchedule(error): ", error);
-    })
-  }
-
+  //TODO: Add getNextAppointment functionality
   getNextAppointment() {
     let timeDiff = 0;
     this.state.schedule.filter((c,i,a) => {
       if ( moment(c.date).format("YYYYMMDD") === TODAY ) {
-
       }
     })
-  }
-
-
-  displayNext(obj) {
-    if (
-      moment(obj.date).format("YYYYMMDD") === TODAY
-    ) {
-      // find next appt from now
-      return obj
-    }
   }
 
   displayToday(obj) {
@@ -97,10 +78,9 @@ export default class Schedule extends Component {
   }
 
   displaySchedule(obj, idx) {
-    console.log("displaySchedule: ", obj)
     return (
       <li key={idx}>
-        <p>{obj.date}  {obj.client} {obj.duration} {obj.location}</p>
+        <p>{formatLongDateTime(obj.date)}  {obj.client} {obj.duration} {obj.location}</p>
       </li>
     )
   }
@@ -111,8 +91,10 @@ export default class Schedule extends Component {
         <h2>Today is:</h2>
         <p>{formatLongDate()}</p>
 
+        <NewAppointment
+          schedule={this.state.schedule}/>
+
         <h2>Schedule</h2>
-        <h3>Next Appointment:</h3>
 
         <h3>Today</h3>
         <ul>
