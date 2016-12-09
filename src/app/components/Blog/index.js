@@ -1,54 +1,15 @@
-import React from 'react';
-
+import React, { Component } from 'react';
+import { base } from '../../config/constants'
 import Sidebar from './Sidebar';
 import Content from './Content';
-
-import * as moment from 'moment';
-
-/*************************************************/
-/*************************************************/
-/*************************************************/
-/****** Uncomment ONE of these data sources  *****/
-// *** Local data for demo purposes:
-// import blogData from '../data/joni-weiss-blog.json';
-// *** Firebase data source for production
-// Initialize Firebase
-// var config = {
-//   apiKey: "AIzaSyChSy1WLxdHeYsroAvYElXsOYvkLyEufZE",
-//   authDomain: "joni-weiss-blog.firebaseapp.com",
-//   databaseURL: "https://joni-weiss-blog.firebaseio.com",
-//   storageBucket: "joni-weiss-blog.appspot.com",
-//   messagingSenderId: "1015106403880"
-// };
-// firebase.initializeApp(config);
-// const fbRef = firebase.database().ref();
-// const fbObjRef = fbRef.child('blogData');
-/*************************************************/
-/*************************************************/
-/*************************************************/
-
+import moment from 'moment'
 import _ from 'lodash';
 
-let blogData = [],
-    monthArr = [],
-    tagArr = [],
-    datesArr = [];
-
-function updateBlog(entryVal, entryKey) {
-  blogData.push(entryVal);
-  monthArr.push(entryVal.posted[1]);
-  datesArr.push(entryVal.posted);
-  entryVal.tags.forEach(function(tag) {
-    tagArr.push(tag);
-  });
-}
-
-export default class Blog extends React.Component {
+export default class Blog extends Component {
   constructor() {
     super();
     this.state = {
-      fbData: blogData,
-      data: blogData,
+      blog: [],
       monthArr: [],
       datesArr: [],
       tagArr: [],
@@ -58,54 +19,14 @@ export default class Blog extends React.Component {
     };
   }
 
-  // componentWillMount (){
-  //   // Add DB Objects to
-  //   this.fbObjRef = fbRef.child('blogData');
-  //   this.fbObjRef.on("child_added", (snapshot) => {
-  //     updateBlog(snapshot.val(), snapshot.key);
-  //     this.setState({
-  //       fbData: blogData,
-  //       data: blogData,
-  //       monthArr: monthArr,
-  //       datesArr: datesArr,
-  //       tagArr: tagArr
-  //     });
-  //   }).bind(this)
-  //
-  // }
-  //
-  // handleSubmit (e) {
-  //   e.preventDefault();
-  //   this.fbObjRef.push({
-  //     post: this.state.post
-  //   });
-  //   this.setState({post: {}});
-  // }
-  //
-  // componentWillUnmount () {
-  //   this.fbObjRef.off();
-  // }
-  //
-  // setBlogData(stype, sval) {
-  //   if (stype === "reset") {
-  //     return this.state.fbData;
-  //   }
-  //   let arr = [];
-  //   this.state.fbData.map(function(obj) {
-  //     if (obj[stype].includes(sval)) {
-  //       arr.push(obj);
-  //     }
-  //   })
-  //   return arr;
-  // }
-  //
-  // onSetSearch (stype, sval) {
-  //   this.setState({
-  //     searchType: stype,
-  //     searchValue: sval,
-  //     data: this.setBlogData(stype, sval)
-  //   });
-  // }
+  componentWillMount(){
+    this.setState({
+      blog: this.getBlog()
+    })
+  }
+  componentWillUnmount(){
+    base.removeBinding(this.blogRef);
+  }
 
   onSetSearchStr (str) {
     this.setState({
@@ -113,21 +34,31 @@ export default class Blog extends React.Component {
     });
   }
 
+  getBlog(){
+    base.fetch('blog', {
+      context: this,
+      asArray: true
+    }).then(blog => {
+      console.log("getBlog(success!): ", blog);
+    }).catch(error => {
+      //handle error
+      console.log("getServices(error): ", error);
+    })
+  }
 
   render() {
     return (
       <div className="content">
         <Sidebar
-          data={this.state.data}
+          blog={this.state.blog}
           monthArr={this.state.monthArr}
           tagArr={this.state.tagArr}
           setSearchStr={this.onSetSearchStr.bind(this)}
           defaultSearchStr={this.state.searchStr}
           defaultSearchType={this.state.searchType}
-          defaultSearchValue={this.state.searchValue}
-          setSearch={this.onSetSearch.bind(this)} />
+          defaultSearchValue={this.state.searchValue} />
         <Content
-          data={this.state.data}
+          blog={this.state.blog}
           searchStr={this.state.searchStr}
           searchType={this.state.searchType}
           searchValue={this.state.searchValue}/>

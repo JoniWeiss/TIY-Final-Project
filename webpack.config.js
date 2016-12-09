@@ -13,6 +13,12 @@ module.exports = {
     publicPath: "/app/"
   },
   module: {
+    preLoaders: [
+      {
+        test: /\.js$/,
+        loader: "source-map-loader"
+      }
+    ],
     loaders: [
       {
         test: /\.js?/,
@@ -20,7 +26,7 @@ module.exports = {
         loader: "babel-loader",
         query: {
            presets: ['react', 'es2015']
-       }
+        }
       },
       {
         test: /\.css$/,
@@ -41,16 +47,14 @@ module.exports = {
       }
     ]
   },
-  plugins: debug ? [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.ProvidePlugin({'React': 'react'})
-  ] : [
+  plugins: debug ? [] : [
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(true),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production')
       }
     }),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(true),
-    new webpack.optimize.UglifyJsPlugin({})  ]
+    new webpack.optimize.UglifyJsPlugin({})
+  ]
 };

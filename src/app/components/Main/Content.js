@@ -3,7 +3,7 @@ import React from 'react';
 export default class Content extends React.Component {
   render () {
     return(
-      <div className="blog-content">
+      <div className="content-main">
         <h2>Home</h2>
         <p>My Awesome Therapist is an app with a mission. Our mission is to help the busy Licensed Massage Therapist to manage scheduling and client management, while creating a web presence for existing and potential clients. </p>
         <p>Features (public by default):</p>

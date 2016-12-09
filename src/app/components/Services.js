@@ -1,26 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { base } from '../config/constants'
 import moment from 'moment'
 import { timeNow, formatLongDate } from '../helpers/date-helpers'
 
 
-export default class Services extends React.Component {
+export default class Services extends Component {
   constructor(props){
     super(props);
     this.state = {
-      services: [],
-      loading: true
+      services: []
     }
   }
   componentDidMount(){
     this.ref = base.syncState('services', {
       context: this,
       state: 'services',
-      asArray: true,
-      then(){
-        this.setState({loading: false})
-      }
-    });
+      asArray: true
+    })
   }
   componentWillUnmount(){
     base.removeBinding(this.ref);
@@ -28,6 +24,7 @@ export default class Services extends React.Component {
 
   //TODO: This needs to work for objects - not arrays
   handleAddItem(newItem){
+    console.log("handleAddItem: ", newItem);
     this.setState({
       services: this.state.services.concat([newItem])
     });
@@ -35,6 +32,7 @@ export default class Services extends React.Component {
 
   //TODO: This needs to work for objects - not arrays
   handleRemoveItem(index){
+    console.log("handleRemoveItem: ", index);
     var newList = this.state.services;
     newList.splice(index, 1);
     this.setState({
@@ -67,8 +65,10 @@ export default class Services extends React.Component {
   }
 
   render() {
+    console.log("services: ", this.state.services);
     return (
       <div>
+        <h1>Our Services</h1>
         <h2>Today is:</h2>
         <p>{formatLongDate()}</p>
 

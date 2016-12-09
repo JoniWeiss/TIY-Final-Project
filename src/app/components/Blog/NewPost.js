@@ -37,7 +37,7 @@ export default class NewPost extends React.Component {
           return  <div key={idx}>
                     <button
                       id={month}
-                      name="posted"
+                      name="date"
                       onClick={this.onClickSelect.bind(this)}>{month}</button><br/>
                   </div>
         })}

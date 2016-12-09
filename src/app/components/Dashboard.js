@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react'
 import { base } from '../config/constants'
+import Login from './Login'
 import NewAppointment from './NewAppointment'
 import moment from 'moment'
 import {
@@ -14,12 +15,11 @@ import {
   formatShortDateTime,
   formatTime } from '../helpers/date-helpers'
 
-export default class Schedule extends Component {
+export default class dashboard extends Component {
   constructor(props){
     super(props);
     this.state = {
-      schedule: [],
-      loading: true
+      schedule: []
     }
   }
   componentDidMount(){
@@ -30,10 +30,7 @@ export default class Schedule extends Component {
       queries: {
         orderByChild: 'date'
       },
-      startAt: moment().format(),
-      then(){
-        this.setState({loading: false})
-      }
+      startAt: moment().format()
     });
   }
   componentWillUnmount(){
@@ -78,6 +75,7 @@ export default class Schedule extends Component {
   }
 
   displaySchedule(obj, idx) {
+    console.log(obj);
     return (
       <li key={idx}>
         <p>{formatLongDateTime(obj.date)}  {obj.client} {obj.duration} {obj.location}</p>
@@ -88,6 +86,7 @@ export default class Schedule extends Component {
   render() {
     return (
       <div>
+        <h1>Therapists' Awesome Dashboard</h1>
         <h2>Today is:</h2>
         <p>{formatLongDate()}</p>
 
