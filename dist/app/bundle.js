@@ -28241,7 +28241,7 @@
 	                'li',
 	                {
 	                  className: (0, _classnames2.default)("navItem", {
-	                    hide: !this.props.isAuthed
+	                    hide: !isAuthed
 	                  }) },
 	                _react2.default.createElement(
 	                  _reactRouter.Link,
@@ -28276,13 +28276,13 @@
 	                  'Blog'
 	                )
 	              ),
-	              this.props.authed ? _react2.default.createElement(
+	              this.props.isAuthed ? _react2.default.createElement(
 	                'button',
 	                {
 	                  style: { border: 'none', background: 'transparent' },
 	                  onClick: function onClick() {
 	                    logout();
-	                    _this2.setState({ authed: false });
+	                    _this2.setState({ isAuthed: false });
 	                    router.transitionTo('/');
 	                  }
 	                },
@@ -28294,7 +28294,7 @@
 	                  'li',
 	                  {
 	                    className: (0, _classnames2.default)("navItem", {
-	                      hide: this.props.isAuthed
+	                      hide: isAuthed
 	                    }) },
 	                  _react2.default.createElement(
 	                    _reactRouter.Link,
@@ -28306,7 +28306,7 @@
 	                  'li',
 	                  {
 	                    className: (0, _classnames2.default)("navItem", {
-	                      hide: this.props.isAuthed
+	                      hide: isAuthed
 	                    }) },
 	                  _react2.default.createElement(
 	                    _reactRouter.Link,

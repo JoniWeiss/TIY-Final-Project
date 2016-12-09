@@ -13,6 +13,8 @@ import Dashboard from './Dashboard'
 import About from './About'
 import ContactUs from './ContactUs'
 import Login from './Login'
+import Register from './Register'
+import Logout from './Logout'
 
 
 import AppSass from '../styles/App.sass';
@@ -51,7 +53,7 @@ export default class App extends Component {
     }
   }
 
-  componentDidMount () {
+  componentWillMount () {
     this.removeListener = base.auth().onAuthStateChanged((user) => {
       if (user) {
         console.log("Logged in: ", user.email, user.uid);
@@ -77,6 +79,7 @@ export default class App extends Component {
           <Header
             isAuthed={this.state.isAuthed}
             isAdmin={this.state.isAdmin}
+            handleAuthChange={this.handleAuthChange}
           />
           <Match
             exactly
@@ -112,6 +115,9 @@ export default class App extends Component {
           <Match pattern='/about' component={About}/>
           <Match pattern='/contact-us' component={ContactUs}/>
           <Match pattern='/blog' component={Blog}/>
+          <Match pattern='/login' component={Login}/>
+          <Match pattern='/register' component={Register}/>
+          <Match pattern='/logout' component={Logout}/>
           <Miss render={() => <h3>No Match</h3>} />
           <Footer />
         </div>

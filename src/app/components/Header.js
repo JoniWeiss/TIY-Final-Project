@@ -1,6 +1,9 @@
 import React from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router';
+import { base } from '../config/constants'
+import { logout } from '../helpers/auth'
+
 import classnames from 'classnames'
 
 
@@ -41,47 +44,47 @@ export default class Header extends React.Component {
               <li><Link to='/'>My Awesome Therapist — Home</Link></li>
               <li><Link to='/services'>Services</Link></li>
               {/***Dashboard***/}
-              <li
-                className={
-                  classnames("navItem", {
-                    hide: !this.props.isAuthed
-                  })
-                }>
-                <Link to='/dashboard'>Therapist Dashboard
-                </Link>
-              </li>
+              {isAuthed
+                ? <span>
+                    <li>
+                      <Link to="/dashboard">Therapist Dashboard
+                      </Link>
+                    </li>
+                  </span>
+                : <span></span>
+              }
               <li><Link to='/about'>About</Link></li>
               <li><Link to='/contact-us'>Contact Us</Link></li>
               <li><Link to='/blog'>Blog</Link></li>
-                {this.props.authed
-                  ? <button
-                      style={{border: 'none', background: 'transparent'}}
-                      onClick={() => {
-                        logout()
-                        this.setState({authed: false})
-                        router.transitionTo('/')
-                      }}
-                      >Logout</button>
-                  : <span>
-                      <li
-                        className={
-                          classnames("navItem", {
-                            hide: this.props.isAuthed
-                          })
-                        }>
-                        <Link to="/login">Login
-                        </Link>
-                      </li>
-                      <li
-                        className={
-                          classnames("navItem", {
-                            hide: this.props.isAuthed
-                          })
-                        }>
-                        <Link to="/register" >Register
-                        </Link>
-                      </li>
-                    </span>}
+              {isAuthed
+                ? <span>
+                    <li>
+                      <a href="#" onClick={logout}>
+                        Log Out
+                      </a>
+                    </li>
+                  </span>
+                : <span>
+                    <li
+                      className={
+                        classnames("navItem", {
+                          hide: isAuthed
+                        })
+                      }>
+                      <Link to="/login">Login
+                      </Link>
+                    </li>
+                    <li
+                      className={
+                        classnames("navItem", {
+                          hide: isAuthed
+                        })
+                      }>
+                      <Link to="/register" >Register
+                      </Link>
+                    </li>
+                  </span>
+                }
             </ul>
           </div>
         </nav>

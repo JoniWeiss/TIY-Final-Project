@@ -22,6 +22,11 @@ export function login (email, pw) {
   }, authHandler(email));
 }
 
+export function logout() {
+  base.auth().signOut()
+  window.location.reload()
+}
+
 
 // Create
 // base.createUser({
@@ -51,9 +56,6 @@ export function login (email, pw) {
 //     .catch((error) => console.log('Oops', error))
 // }
 //
-// export function logout () {
-//   return firebaseAuth().signOut()
-// }
 //
 // export function login (email, pw) {
 //   return firebaseAuth().signInWithEmailAndPassword(email, pw)
