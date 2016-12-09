@@ -39200,20 +39200,6 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	var blog = [],
-	    monthArr = [],
-	    tagArr = [],
-	    datesArr = [];
-	
-	function updateBlog(entryVal, entryKey) {
-	  blog.push(entryVal);
-	  monthArr.push((0, _moment2.default)(entryVal.date).format("MMMM"));
-	  datesArr.push(entryVal.date);
-	  entryVal.tags.forEach(function (tag) {
-	    tagArr.push(tag);
-	  });
-	}
-	
 	var Blog = function (_Component) {
 	  _inherits(Blog, _Component);
 	
@@ -39223,7 +39209,7 @@
 	    var _this = _possibleConstructorReturn(this, (Blog.__proto__ || Object.getPrototypeOf(Blog)).call(this));
 	
 	    _this.state = {
-	      blog: blog,
+	      blog: [],
 	      monthArr: [],
 	      datesArr: [],
 	      tagArr: [],
@@ -39235,24 +39221,35 @@
 	  }
 	
 	  _createClass(Blog, [{
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      this.ref = _constants.base.syncState('blog', {
-	        context: this,
-	        state: 'blog',
-	        asArray: true
+	    key: 'componentWillMount',
+	    value: function componentWillMount() {
+	      this.setState({
+	        blog: this.getBlog()
 	      });
 	    }
 	  }, {
 	    key: 'componentWillUnmount',
 	    value: function componentWillUnmount() {
-	      _constants.base.removeBinding(this.ref);
+	      _constants.base.removeBinding(this.blogRef);
 	    }
 	  }, {
 	    key: 'onSetSearchStr',
 	    value: function onSetSearchStr(str) {
 	      this.setState({
 	        searchStr: str
+	      });
+	    }
+	  }, {
+	    key: 'getBlog',
+	    value: function getBlog() {
+	      _constants.base.fetch('blog', {
+	        context: this,
+	        asArray: true
+	      }).then(function (blog) {
+	        console.log("getBlog(success!): ", blog);
+	      }).catch(function (error) {
+	        //handle error
+	        console.log("getServices(error): ", error);
 	      });
 	    }
 	  }, {
@@ -39499,6 +39496,7 @@
 	          'Content section'
 	        ),
 	        this.props.blog.map(function (entry, idx) {
+	          console.log("blog entry: ", entry);
 	          return _react2.default.createElement(
 	            'div',
 	            { key: idx },
@@ -39512,7 +39510,7 @@
 	            _react2.default.createElement(
 	              'p',
 	              { className: 'entry-article' },
-	              entry.posted.map(function (val, idx) {
+	              entry.entryDate.map(function (val, idx) {
 	                return _react2.default.createElement(
 	                  'span',
 	                  { key: idx },
@@ -39715,7 +39713,7 @@
 	              "button",
 	              {
 	                id: month,
-	                name: "posted",
+	                name: "date",
 	                onClick: _this2.onClickSelect.bind(_this2) },
 	              month
 	            ),
@@ -72756,7 +72754,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".nav-menu {\n  font-family: \"Ubuntu\", sans-serif;\n  background-color: black;\n  display: flex;\n  flex-wrap: nowrap;\n  justify-content: flex-start;\n  align-items: center;\n  color: white;\n  position: fixed;\n  top: 0;\n  width: 100vw;\n  height: 3.5em;\n  text-align: left;\n  padding: 0 20px;\n  z-index: 10; }\n  .nav-menu #logo {\n    margin-right: 1em; }\n    .nav-menu #logo img {\n      background-color: white;\n      display: flex;\n      justify-content: flex-start;\n      align-self: center;\n      border: 2px solid rebeccapurple;\n      border-radius: 50%;\n      height: 2.5em;\n      width: auto;\n      margin: .25em;\n      padding: .25em;\n      text-align: center;\n      z-index: -1; }\n  .nav-menu .menu {\n    display: none; }\n  .nav-menu .menu-items {\n    display: inline-block;\n    background-color: black;\n    align-self: flex-start;\n    white-space: nowrap;\n    list-style-type: none;\n    margin: 0; }\n    .nav-menu .menu-items li {\n      list-style: none;\n      display: inline-block;\n      border-left: 1px solid #b6c999;\n      padding: 1em 1.5em; }\n      .nav-menu .menu-items li a:link,\n      .nav-menu .menu-items li a:visited {\n        color: #b6c999;\n        font-weight: bold;\n        text-decoration: none; }\n    .nav-menu .menu-items li:last-child {\n      border-right: 1px solid #b6c999; }\n\n@media screen and (max-width: 480px) {\n  .nav-menu {\n    display: inline-block;\n    padding: 0; }\n    .nav-menu #logo {\n      display: flex;\n      flex-direction: row;\n      justify-content: flex-start;\n      align-self: flex-start; }\n    .nav-menu .menu {\n      background-color: black;\n      width: 100vw;\n      display: block;\n      padding: 1em .5em 1em .5em;\n      color: #b6c999;\n      font-weight: bold;\n      position: relative;\n      outline: 0;\n      transition: opacity .2s ease-in-out; }\n      .nav-menu .menu hover {\n        opacity: 0.6; }\n    .nav-menu .menu-items {\n      display: flex;\n      flex-direction: row;\n      justify-content: flex-start;\n      align-self: flex-start;\n      width: 200px;\n      height: auto;\n      margin: 0 0 0 -6px;\n      padding: 0;\n      background-color: #eee;\n      border-radius: 5px;\n      transition: visibility .5s;\n      z-index: 1; }\n      .nav-menu .menu-items ul {\n        width: 100vw; }\n        .nav-menu .menu-items ul li,\n        .nav-menu .menu-items ul .navItems {\n          display: flex;\n          padding: .5em;\n          border-bottom: 2px solid #b6c999; }\n          .nav-menu .menu-items ul li li:last-child,\n          .nav-menu .menu-items ul .navItems li:last-child {\n            border-bottom: none; }\n          .nav-menu .menu-items ul li li:hover,\n          .nav-menu .menu-items ul .navItems li:hover {\n            background-color: #222; } }\n\nheader {\n  margin-top: 8vh; }\n  header .div--img {\n    flex: 0 0 30%;\n    text-align: center;\n    align-self: flex-start;\n    padding-top: 1em;\n    z-index: 1; }\n  header img {\n    border: 2px solid purple;\n    border-radius: 50%;\n    height: 7em;\n    width: auto;\n    margin: 1em;\n    padding: .25em; }\n  header .header {\n    flex: 0 0 100%;\n    justify-content: center;\n    text-align: center;\n    padding: 1em; }\n\n.footer {\n  background-color: #b5c995;\n  height: 12vh;\n  text-align: center; }\n\n.sidebar {\n  padding: 1em;\n  flex-basis: 30%; }\n\n.qrCode {\n  width: 200px;\n  height: auto; }\n\n.content-main {\n  padding: 1em;\n  flex-basis: 70%; }\n\n.entry-title {\n  padding-bottom: .25em; }\n\n.entry-article {\n  text-align: justify; }\n\n@media (max-width: 800px) {\n  .content {\n    flex-direction: column; } }\n\n* {\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0; }\n\nbody {\n  background-color: #eee;\n  display: flex;\n  flex-direction: column; }\n\nh1, h2, h3, h4 {\n  padding-top: 1em;\n  font-family: \"Ubuntu\", sans-serif; }\n\nh1 {\n  text-align: center; }\n\np {\n  font-family: \"Roboto\", sans-serif; }\n\nheader {\n  display: flex;\n  flex-wrap: nowrap;\n  justify-content: space-between;\n  align-items: center; }\n\n.content {\n  background-color: rgba(181, 201, 149, 0.1);\n  display: flex;\n  flex-direction: row;\n  align-items: stretch;\n  min-height: 100%; }\n\n.hide {\n  opacity: 0; }\n", ""]);
+	exports.push([module.id, ".nav-menu {\n  font-family: \"Ubuntu\", sans-serif;\n  background-color: black;\n  display: flex;\n  flex-wrap: nowrap;\n  justify-content: flex-start;\n  align-items: center;\n  color: white;\n  position: fixed;\n  top: 0;\n  width: 100vw;\n  height: 3.5em;\n  text-align: left;\n  padding: 0 20px;\n  z-index: 10; }\n  .nav-menu #logo {\n    margin-right: 1em; }\n    .nav-menu #logo img {\n      background-color: white;\n      display: flex;\n      justify-content: flex-start;\n      align-self: center;\n      border: 2px solid rebeccapurple;\n      border-radius: 50%;\n      height: 2.5em;\n      width: auto;\n      margin: .25em;\n      padding: .25em;\n      text-align: center;\n      z-index: -1; }\n  .nav-menu .menu {\n    display: none; }\n  .nav-menu .menu-items {\n    display: inline-block;\n    background-color: black;\n    align-self: flex-start;\n    white-space: nowrap;\n    list-style-type: none;\n    margin: 0; }\n    .nav-menu .menu-items li {\n      list-style: none;\n      display: inline-block;\n      border-left: 1px solid #b6c999;\n      padding: 1em 1.5em; }\n      .nav-menu .menu-items li a:link,\n      .nav-menu .menu-items li a:visited {\n        color: #b6c999;\n        font-weight: bold;\n        text-decoration: none; }\n    .nav-menu .menu-items li:last-child {\n      border-right: 1px solid #b6c999; }\n\n@media screen and (max-width: 480px) {\n  .nav-menu {\n    display: inline-block;\n    padding: 0; }\n    .nav-menu #logo {\n      display: flex;\n      flex-direction: row;\n      justify-content: flex-start;\n      align-self: flex-start; }\n    .nav-menu .menu {\n      background-color: black;\n      width: 100vw;\n      display: block;\n      padding: 1em .5em 1em .5em;\n      color: #b6c999;\n      font-weight: bold;\n      position: relative;\n      outline: 0;\n      transition: opacity .2s ease-in-out; }\n      .nav-menu .menu hover {\n        opacity: 0.6; }\n    .nav-menu .menu-items {\n      display: flex;\n      flex-direction: row;\n      justify-content: flex-start;\n      align-self: flex-start;\n      width: 200px;\n      height: auto;\n      margin: 0 0 0 -6px;\n      padding: 0;\n      background-color: #eee;\n      border-radius: 5px;\n      transition: visibility .5s;\n      z-index: 1; }\n      .nav-menu .menu-items ul {\n        width: 100vw; }\n        .nav-menu .menu-items ul li,\n        .nav-menu .menu-items ul .navItems {\n          display: flex;\n          padding: .5em;\n          border-bottom: 2px solid #b6c999; }\n          .nav-menu .menu-items ul li li:last-child,\n          .nav-menu .menu-items ul .navItems li:last-child {\n            border-bottom: none; }\n          .nav-menu .menu-items ul li li:hover,\n          .nav-menu .menu-items ul .navItems li:hover {\n            background-color: #222; } }\n\nheader {\n  margin-top: 8vh; }\n  header .div--img {\n    flex: 0 0 30%;\n    text-align: center;\n    align-self: flex-start;\n    padding-top: 1em;\n    z-index: 1; }\n  header img {\n    border: 2px solid purple;\n    border-radius: 50%;\n    height: 7em;\n    width: auto;\n    margin: 1em;\n    padding: .25em; }\n  header .header {\n    flex: 0 0 100%;\n    justify-content: center;\n    text-align: center;\n    padding: 1em; }\n\n.footer {\n  background-color: #b5c995;\n  height: 12vh;\n  text-align: center; }\n\n.sidebar {\n  padding: 1em;\n  flex-basis: 30%; }\n\n.qrCode {\n  width: 200px;\n  height: auto; }\n\n.content-main {\n  padding: 1em;\n  flex-basis: 70%; }\n\n.entry-title {\n  padding-bottom: .25em; }\n\n.entry-article {\n  text-align: justify; }\n\n@media (max-width: 800px) {\n  .content {\n    flex-direction: column; } }\n\n* {\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0; }\n\nbody {\n  background-color: #eee;\n  display: flex;\n  flex-direction: column; }\n\nh1, h2, h3, h4 {\n  padding-top: 1em;\n  font-family: \"Ubuntu\", sans-serif; }\n\nh1 {\n  text-align: center; }\n\np {\n  font-family: \"Roboto\", sans-serif; }\n\nheader {\n  display: flex;\n  flex-wrap: nowrap;\n  justify-content: space-between;\n  align-items: center; }\n\n.content {\n  background-color: rgba(181, 201, 149, 0.1);\n  display: flex;\n  flex-direction: row;\n  align-items: stretch;\n  min-height: 100%; }\n\n.hide {\n  display: none; }\n", ""]);
 	
 	// exports
 
