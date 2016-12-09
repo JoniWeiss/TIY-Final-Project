@@ -63,11 +63,21 @@ export default class Header extends React.Component {
                       }}
                       >Logout</button>
                   : <span>
-                      <li>
+                      <li
+                        className={
+                          classnames("navItem", {
+                            hide: this.props.isAuthed
+                          })
+                        }>
                         <Link to="/login">Login
                         </Link>
                       </li>
-                      <li>
+                      <li
+                        className={
+                          classnames("navItem", {
+                            hide: this.props.isAuthed
+                          })
+                        }>
                         <Link to="/register" >Register
                         </Link>
                       </li>

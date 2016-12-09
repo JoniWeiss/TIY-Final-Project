@@ -28292,7 +28292,10 @@
 	                null,
 	                _react2.default.createElement(
 	                  'li',
-	                  null,
+	                  {
+	                    className: (0, _classnames2.default)("navItem", {
+	                      hide: this.props.isAuthed
+	                    }) },
 	                  _react2.default.createElement(
 	                    _reactRouter.Link,
 	                    { to: '/login' },
@@ -28301,7 +28304,10 @@
 	                ),
 	                _react2.default.createElement(
 	                  'li',
-	                  null,
+	                  {
+	                    className: (0, _classnames2.default)("navItem", {
+	                      hide: this.props.isAuthed
+	                    }) },
 	                  _react2.default.createElement(
 	                    _reactRouter.Link,
 	                    { to: '/register' },
