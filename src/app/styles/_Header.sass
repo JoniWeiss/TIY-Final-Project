@@ -1,32 +1,128 @@
 @import _variables
 
 header
-  margin-top: 8vh
-  // background-color: skyblue
-  // // background: url(../images/massage-banner.png)
-  // background-position: center center
-  // background-size: cover
-  // width: 100vw
-  // height: 92vh
-  // overflow: hidden:
+  display: flex
+  flex-wrap: nowrap
+  justify-content: space-between
+  align-items: center
+  
+.nav-bar
+  height: $nav-height
 
-  .div--img
-    flex: 0 0 30%
-    text-align: center
+.nav-menu
+  font-family: $fonts-header
+  background-color: black
+  display: flex
+  flex-wrap: nowrap
+  justify-content: flex-start
+  align-items: center
+  color: white
+  position: fixed
+  top: 0
+  width: 100vw
+  text-align: left
+  padding: 0 20px
+  z-index: 10
+
+  #logo
+    margin-right: 1em
+
+    img
+      background-color: white
+      display: flex
+      justify-content: flex-start
+      align-self: center
+      border: 2px solid rebeccapurple
+      border-radius: 50%
+      height: $logo-height
+      width: auto
+      margin: .25em
+      padding: .25em
+      text-align: center
+      z-index: -1
+
+
+  .menu
+    display:  none
+
+  .menu-items
+    display: inline-block
+
+    ul
+    background-color: black
     align-self: flex-start
-    padding-top: 1em
-    z-index: 1
+    white-space: nowrap
+    list-style-type: none
+    margin: 0
 
-  img
-    border: 2px solid purple
-    border-radius: 50%
-    height: 7em
-    width: auto
-    margin: 1em
-    padding: .25em
+    li
+      list-style: none
+      display: inline-block
+      border-left: 1px solid #b6c999
+      padding: 1em 1.5em
 
-  .header
-    flex: 0 0 100%
-    justify-content: center
-    text-align: center
-    padding: 1em
+
+      a:link,
+      a:visited
+        color: #b6c999
+        font-weight: bold
+        text-decoration: none
+
+    li:last-child
+      border-right: 1px solid #b6c999
+
+@media screen and (max-width: 480px)
+  .nav-menu
+    display: inline-block
+    padding: 0
+
+    #logo
+      display: flex
+      flex-direction: row
+      justify-content: flex-start
+      align-self: flex-start
+
+    .menu
+      background-color: black
+      width: 100vw
+      display: block
+      padding: 1em .5em 1em .5em
+      color: #b6c999
+      font-weight: bold
+      position: relative
+      outline: 0
+      transition: opacity .2s ease-in-out
+
+      hover
+        opacity: 0.6
+
+    .menu-items
+      display: flex
+      flex-direction: row
+      justify-content: flex-start
+      align-self: flex-start
+      // display: none
+      // position: absolute
+      width: 200px
+      height: auto
+      margin: 0 0 0 -6px
+      padding: 0
+      background-color: #eee
+      border-radius: 5px
+      transition: visibility .5s
+      z-index: 1
+
+      ul
+        width: 100vw
+
+        li,
+        .navItems
+          display: flex
+          padding: .5em
+          border-bottom: 2px solid #b6c999
+
+          li:last-child
+            border-bottom: none
+
+          li:hover
+            background-color: #222

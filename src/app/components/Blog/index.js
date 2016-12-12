@@ -48,7 +48,7 @@ export default class Blog extends Component {
 
   render() {
     return (
-      <div className="content">
+      <div className="content mainContent">
         <Sidebar
           blog={this.state.blog}
           monthArr={this.state.monthArr}

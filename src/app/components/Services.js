@@ -67,7 +67,7 @@ export default class Services extends Component {
   render() {
     console.log("services: ", this.state.services);
     return (
-      <div>
+      <div className="mainContent">
         <h1>Our Services</h1>
         <h2>Today is:</h2>
         <p>{formatLongDate()}</p>

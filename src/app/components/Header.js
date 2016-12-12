@@ -6,6 +6,7 @@ import { logout } from '../helpers/auth'
 
 import classnames from 'classnames'
 
+import sass from '../styles/_Header.sass'
 
 export default class Header extends React.Component {
   render () {
@@ -31,17 +32,17 @@ export default class Header extends React.Component {
       }
     });﻿
     return(
-      <header>
+      <header className="nav-bar">
         <nav className="nav-menu">
           <div id="logo">
-            <span className="menu"><i className="fa fa-bars" ></i></span>
+            <span className="menu"><i className="fa fa-bars"></i></span>
             <Link to='/'>
               <img src="app/images/purple-lotus-flower.png" alt="logo" />
             </Link>
           </div>
           <div className="menu-items">
             <ul>
-              <li><Link to='/'>My Awesome Therapist — Home</Link></li>
+              <li><Link to='/'>Home</Link></li>
               <li><Link to='/services'>Services</Link></li>
               {/***Dashboard***/}
               {isAuthed
@@ -59,7 +60,7 @@ export default class Header extends React.Component {
               {isAuthed
                 ? <span>
                     <li>
-                      <a href="#" onClick={logout}>
+                      <a href="/" onClick={logout}>
                         Log Out
                       </a>
                     </li>
@@ -89,6 +90,6 @@ export default class Header extends React.Component {
           </div>
         </nav>
       </header>
-    );
+    )
   }
 }

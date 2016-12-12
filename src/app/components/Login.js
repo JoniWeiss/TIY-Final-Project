@@ -46,8 +46,8 @@ export default class Home extends Component {
   render() {
     const { isAuthed } = this.props
     return (
-      <div className="home">
-        <h1>Home</h1>
+      <div className="mainContent">
+        <h1>Please Log In</h1>
         <form onSubmit={this.login.bind(this)}>
           <input
             id="email"

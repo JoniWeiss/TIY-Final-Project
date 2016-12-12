@@ -85,7 +85,7 @@ export default class dashboard extends Component {
 
   render() {
     return (
-      <div>
+      <div className="mainContent">
         <h1>Therapists' Awesome Dashboard</h1>
         <h2>Today is:</h2>
         <p>{formatLongDate()}</p>

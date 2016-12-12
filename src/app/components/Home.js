@@ -19,9 +19,7 @@ export default class Home extends Component {
     const { isAuthed } = this.props
     return (
       <div>
-        <Login />
-        <Main
-          isAuthed={this.props.isAuthed} />
+        <Main isAuthed={this.props.isAuthed} />
       </div>
     );
   }

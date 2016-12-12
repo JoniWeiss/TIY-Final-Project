@@ -1,9 +1,9 @@
-  import React from 'react';
+import React, { Component } from 'react';
 
 import ArticleContent from './ArticleContent';
 import NewPost from './NewPost';
 
-export default class Content extends React.Component {
+export default class Content extends Component {
   render () {
     return(
       <div className="content-main">
