@@ -14,32 +14,81 @@ import {
   formatShortDateTime,
   formatTime } from '../helpers/date-helpers'
 
-export default class NewAppointment extends Component {
+export default class newAppt extends Component {
   constructor(props){
     super(props);
     this.state = {
-      services: []
+
     }
   }
 
-  //TODO: This needs to work for objects - not arrays
-  handleAddItem(newItem){
-    //Push new appointment to DB
-  }
+handleDateChange (e) {
+   this.setState({
+     apptDate: e.target.value
+   });
+}
+
+handleTimeChange (e) {
+   this.setState({
+     apptTime: e.target.value
+   });
+}
+
+handleDurationChange (e) {
+   this.setState({
+     apptDuration: e.target.value
+   });
+}
+
+handleNameChange (e) {
+   this.setState({
+     apptName: e.target.value
+   });
+}
+
+handlePhoneChange (e) {
+   this.setState({
+     apptPhone: e.target.value
+   });
+}
+
+handleNoteChange (e) {
+   this.setState({
+     apptNote: e.target.value
+   });
+}
+
+handleAdd () {
+  console.log("Date: " + this.state.apptDate);
+  console.log("Time: " + this.state.apptTime);
+  console.log("Duration: " + this.state.apptDuration);
+  console.log("Name: " + this.state.apptName);
+  console.log("Phone: " + this.state.apptPhone);
+  console.log("Note: " + this.state.apptNote);
+      // this.props.addAppt(event)
+}
 
   render() {
     return (
       <div>
         <h2>Add new appointment</h2>
-        <form>
-          <input type="date" placeholder="MM/DD/YY" tabIndex={1} />
-          <input type="time" placeholder="hh:mm AM/PM" tabIndex={2} />
-          <input type="text" placeholder="First Name"tabIndex={3} />
-          <input type="text" placeholder="Last Name" tabIndex={4} />
-          <input type="text" placeholder="801-000-0000" tabIndex={5} />
-          <textArea type="textArea" placeholder="Notes..." tabIndex={6} />
+        <br />
+        <form >
 
-          <button type="submit" tabIndex={7}>Add</button>
+          <input name="date" type="date" placeholder="MM/DD/YY" tabIndex={1} onChange={this.handleDateChange.bind(this)} /><br /><br />
+
+          <input name="time" type="time" placeholder="hh:mm AM/PM" tabIndex={2} onChange={this.handleTimeChange.bind(this)} /><br /><br />
+
+          <input name="duration" type="time" placeholder="Duration (60, 90, 120)" tabIndex={3} onChange={this.handleDurationChange.bind(this)} /><br /><br />
+
+          <input name="name" type="text" placeholder="Client Name"tabIndex={4} onChange={this.handleNameChange.bind(this)} /><br /><br />
+
+          <input name="phone" type="text" placeholder="801-000-0000" tabIndex={5} onChange={this.handlePhoneChange.bind(this)} /><br /><br />
+
+          <textArea name="note" type="textArea" placeholder="Notes..." tabIndex={6} onChange={this.handleNoteChange.bind(this)} />
+          <br /><br />
+
+          <button type="button" tabIndex={7} onClick={this.handleAdd}>Add</button>
         </form>
 
       </div>

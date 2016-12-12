@@ -15,6 +15,8 @@ import {
   formatShortDateTime,
   formatTime } from '../helpers/date-helpers'
 
+import sass from '../styles/_Dashboard.sass'
+
 export default class dashboard extends Component {
   constructor(props){
     super(props);
@@ -38,7 +40,7 @@ export default class dashboard extends Component {
   }
 
   //TODO: This needs to work for objects - not arrays
-  handleAddItem(newItem){
+  handleAddAppt(apptObj){
     this.setState({
       schedule: this.state.schedule.concat([newItem])
     });
@@ -64,13 +66,37 @@ export default class dashboard extends Component {
 
   displayToday(obj) {
     if ( moment(obj.date).format("YYYYMMDD") === TODAY ) {
-      return obj
+      return (
+        <li>
+          <p>{obj.client} {obj.phone}<br />
+              {formatLongDateTime(obj.date)}<br />
+              {obj.duration} Minutes<br /> {obj.location}<br /><br /></p>
+        </li>
+      )
     }
   }
 
   displayTomorrow(obj) {
     if ( moment(obj.date).format("YYYYMMDD") === TOMORROW ) {
-      return obj
+      return (
+        <li>
+          <p>{obj.client} {obj.phone}<br />
+              {formatLongDateTime(obj.date)}<br />
+              {obj.duration} Minutes<br /> {obj.location}<br /><br /></p>
+        </li>
+      )
+    }
+  }
+
+  displayFuture(obj) {
+    if ( moment(obj.date).format("YYYYMMDD") > TOMORROW ) {
+      return (
+        <li>
+          <p>{obj.client} {obj.phone}<br />
+              {formatLongDateTime(obj.date)}<br />
+              {obj.duration} Minutes<br /> {obj.location}<br /><br /></p>
+        </li>
+      )
     }
   }
 
@@ -78,7 +104,9 @@ export default class dashboard extends Component {
     console.log(obj);
     return (
       <li key={idx}>
-        <p>{formatLongDateTime(obj.date)}  {obj.client} {obj.duration} {obj.location}</p>
+        <p>{obj.client} {obj.phone}<br />
+            {formatLongDateTime(obj.date)}<br />
+            {obj.duration} Minutes<br /> {obj.location}<br /><br /></p>
       </li>
     )
   }
@@ -88,31 +116,46 @@ export default class dashboard extends Component {
       <div className="mainContent">
         <h1>Therapists' Awesome Dashboard</h1>
         <h2>Today is:</h2>
-        <p>{formatLongDate()}</p>
+        <p className="centeredText">{formatLongDate()}</p><br />
+        <hr />
+        <div className="flex">
+          <div className="flexContent">
+            <h2>Schedule</h2>
 
-        <NewAppointment
-          schedule={this.state.schedule}/>
+            <h3>Today</h3>
+            <hr />
+            <ul>
+              {this.state.schedule
+                .filter(this.displayToday)
+                .map((obj, idx) => this.displaySchedule(obj, idx))}
+            </ul>
+            <br />
 
-        <h2>Schedule</h2>
+            <h3>Tomorrow</h3>
+            <hr />
+            <ul>
+              {this.state.schedule
+                .filter(this.displayTomorrow)
+                .map((obj, idx) => this.displaySchedule(obj, idx))}
+            </ul>
+            <br />
 
-        <h3>Today</h3>
-        <ul>
-          {this.state.schedule
-            .filter(this.displayToday)
-            .map((obj, idx) => this.displaySchedule(obj, idx))}
-        </ul>
-
-        <h3>Tomorrow</h3>
-        <ul>
-          {this.state.schedule
-            .filter(this.displayTomorrow)
-            .map((obj, idx) => this.displaySchedule(obj, idx))}
-        </ul>
-
-        <h3>All</h3>
-        <ul>
-          {this.state.schedule.map((obj, idx) => this.displaySchedule(obj, idx))}
-        </ul>
+            <h3>Future</h3>
+            <hr />
+            <ul>
+              {this.state.schedule
+                .filter(this.displayFuture)
+                .map((obj, idx) => this.displaySchedule(obj, idx))}
+            </ul>
+            <br />
+            <hr />
+          </div>
+          <div className="flexContent">
+            <NewAppointment
+              schedule={this.state.schedule}
+              addAppt={this.handleAddAppt.bind(this)}/>
+          </div>
+        </div>
       </div>
     )
   }
