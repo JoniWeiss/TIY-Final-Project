@@ -44,11 +44,11 @@ export default class Header extends React.Component {
             <ul>
               <li><Link to='/'>Home</Link></li>
               <li><Link to='/services'>Services</Link></li>
-              {/***Dashboard***/}
+              {/***Schedule***/}
               {isAuthed
                 ? <span>
                     <li>
-                      <Link to="/dashboard">Therapist Dashboard
+                      <Link to="/schedule">Therapist Schedule
                       </Link>
                     </li>
                   </span>

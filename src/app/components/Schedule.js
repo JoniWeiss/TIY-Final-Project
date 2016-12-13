@@ -15,9 +15,9 @@ import {
   formatShortDateTime,
   formatTime } from '../helpers/date-helpers'
 
-import sass from '../styles/_Dashboard.sass'
+import sass from '../styles/_Schedule.sass'
 
-export default class dashboard extends Component {
+export default class Schedule extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -42,17 +42,18 @@ export default class dashboard extends Component {
   //TODO: This needs to work for objects - not arrays
   handleAddAppt(apptObj){
     this.setState({
-      schedule: this.state.schedule.concat([newItem])
+      schedule: this.state.schedule.concat(apptObj)
     });
   }
 
   //TODO: This needs to work for objects - not arrays
-  handleRemoveItem(index){
-    var newList = this.state.schedule;
-    newList.splice(index, 1);
-    this.setState({
-      schedule: newList
-    })
+  handleRemoveItem(apptObj){
+    // var newList = this.state.schedule;
+    console.log("handleRemoveItem: ", apptObj);
+    // newList.splice(apptObj, 1);
+    // this.setState({
+    //   schedule: newList
+    // })
   }
 
   //TODO: Add getNextAppointment functionality
@@ -70,7 +71,10 @@ export default class dashboard extends Component {
         <li>
           <p>{obj.client} {obj.phone}<br />
               {formatLongDateTime(obj.date)}<br />
-              {obj.duration} Minutes<br /> {obj.location}<br /><br /></p>
+              {obj.duration} Minutes<br />
+              {obj.location}<br />
+              <button>Edit</button>
+              <button>Delete</button><br /><br /></p>
         </li>
       )
     }
@@ -82,7 +86,9 @@ export default class dashboard extends Component {
         <li>
           <p>{obj.client} {obj.phone}<br />
               {formatLongDateTime(obj.date)}<br />
-              {obj.duration} Minutes<br /> {obj.location}<br /><br /></p>
+              {obj.duration} Minutes<br /> {obj.location}<br />
+              <button>Edit</button>
+              <button>Delete</button><br /><br /></p>
         </li>
       )
     }
@@ -94,19 +100,23 @@ export default class dashboard extends Component {
         <li>
           <p>{obj.client} {obj.phone}<br />
               {formatLongDateTime(obj.date)}<br />
-              {obj.duration} Minutes<br /> {obj.location}<br /><br /></p>
+              {obj.duration} Minutes<br /> {obj.location}<br />
+              {obj.note}<br />
+              <button>Edit</button>
+              <button>Delete</button><br /><br /></p>
         </li>
       )
     }
   }
 
   displaySchedule(obj, idx) {
-    console.log(obj);
     return (
       <li key={idx}>
         <p>{obj.client} {obj.phone}<br />
             {formatLongDateTime(obj.date)}<br />
-            {obj.duration} Minutes<br /> {obj.location}<br /><br /></p>
+            {obj.duration} Minutes<br /> {obj.location}<br />
+            <button>Edit</button>
+            <button>Delete</button><br /><br /></p>
       </li>
     )
   }
@@ -114,7 +124,7 @@ export default class dashboard extends Component {
   render() {
     return (
       <div className="mainContent">
-        <h1>Therapists' Awesome Dashboard</h1>
+        <h1>Therapists' Awesome Schedule</h1>
         <h2>Today is:</h2>
         <p className="centeredText">{formatLongDate()}</p><br />
         <hr />

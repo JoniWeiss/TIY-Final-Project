@@ -9,7 +9,7 @@ import Home from './Home'
 import Main from './Main'
 import Blog from './Blog'
 import Services from './Services'
-import Dashboard from './Dashboard'
+import Schedule from './Schedule'
 import About from './About'
 import ContactUs from './ContactUs'
 import Login from './Login'
@@ -103,9 +103,9 @@ export default class App extends Component {
             )}
           />
           <Match
-            pattern='/dashboard'
+            pattern='/schedule'
             render={defaultProps => (
-              <Dashboard
+              <Schedule
                 isAuthed={this.state.isAuthed}
                 handleAuthChange={this.handleAuthChange}
                 {...defaultProps}
