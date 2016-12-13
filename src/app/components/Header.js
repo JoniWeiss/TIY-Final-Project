@@ -37,7 +37,7 @@ export default class Header extends React.Component {
           <div id="logo">
             <span className="menu"><i className="fa fa-bars"></i></span>
             <Link to='/'>
-              <img src="app/images/purple-lotus-flower.png" alt="logo" />
+              <img src={require("../images/purple-lotus-flower.png")} alt="logo" />
             </Link>
           </div>
           <div className="menu-items">
