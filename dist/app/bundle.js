@@ -72768,6 +72768,8 @@
 	            _react2.default.createElement('br', null),
 	            obj.location,
 	            _react2.default.createElement('br', null),
+	            obj.note,
+	            _react2.default.createElement('br', null),
 	            _react2.default.createElement(
 	              'button',
 	              null,
@@ -72805,6 +72807,8 @@
 	            _react2.default.createElement('br', null),
 	            ' ',
 	            obj.location,
+	            _react2.default.createElement('br', null),
+	            obj.note,
 	            _react2.default.createElement('br', null),
 	            _react2.default.createElement(
 	              'button',
@@ -72880,8 +72884,9 @@
 	          obj.duration,
 	          ' Minutes',
 	          _react2.default.createElement('br', null),
-	          ' ',
 	          obj.location,
+	          _react2.default.createElement('br', null),
+	          obj.note,
 	          _react2.default.createElement('br', null),
 	          _react2.default.createElement(
 	            'button',
@@ -80430,6 +80435,11 @@
 	        _react2.default.createElement(
 	          "div",
 	          null,
+	          _react2.default.createElement(
+	            "p",
+	            null,
+	            "Click on map for directions:"
+	          ),
 	          _react2.default.createElement(
 	            "a",
 	            { href: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.9506754934837!2d-111.8938183845935!3d40.76310957932634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8752f50fe5b827f9%3A0xe6de13b82471db4f!2s10+Broadway%2C+Salt+Lake+City%2C+UT+84101!5e0!3m2!1sen!2sus!4v1481755621439", target: "_blank" },

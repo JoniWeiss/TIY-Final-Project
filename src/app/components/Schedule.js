@@ -72,6 +72,7 @@ export default class Schedule extends Component {
               {formatLongDateTime(obj.date)}<br />
               {obj.duration} Minutes<br />
               {obj.location}<br />
+              {obj.note}<br />
               <button>Edit</button>
               <button>Delete</button><br /><br /></p>
         </li>
@@ -86,6 +87,7 @@ export default class Schedule extends Component {
           <p>{obj.client} {obj.phone}<br />
               {formatLongDateTime(obj.date)}<br />
               {obj.duration} Minutes<br /> {obj.location}<br />
+              {obj.note}<br />
               <button>Edit</button>
               <button>Delete</button><br /><br /></p>
         </li>
@@ -113,7 +115,9 @@ export default class Schedule extends Component {
       <li key={idx}>
         <p>{obj.client} {obj.phone}<br />
             {formatLongDateTime(obj.date)}<br />
-            {obj.duration} Minutes<br /> {obj.location}<br />
+            {obj.duration} Minutes<br />
+            {obj.location}<br />
+            {obj.note}<br />
             <button>Edit</button>
             <button>Delete</button><br /><br /></p>
       </li>
