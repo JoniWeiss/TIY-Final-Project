@@ -10,17 +10,19 @@ export default class Register extends Component {
     return (
       <div  className="mainContent">
         <h1>Register</h1>
-        <form onSubmit={this.handleSubmit}>
-          <div className="form-group">
-            <label>Email</label>
-            <input className="form-control" ref={(email) => this.email = email} placeholder="Email"/>
-          </div>
-          <div className="form-group">
-            <label>Password</label>
-            <input type="password" className="form-control" placeholder="Password" ref={(pw) => this.pw = pw} />
-          </div>
-          <button type="submit" className="btn btn-primary">Register</button>
-        </form>
+        <br /><br />
+
+        <div className="flex">
+          <form onSubmit={this.handleSubmit}>
+            <div className="form-group">
+              <input className="form-control" ref={(email) => this.email = email} placeholder="Email"/>
+            </div><br />
+            <div className="form-group">
+              <input type="password" className="form-control" placeholder="Password" ref={(pw) => this.pw = pw} />
+            </div><br />
+            <button type="submit" className="btn btn-primary">Register</button>
+          </form>
+        </div>
       </div>
     )
   }

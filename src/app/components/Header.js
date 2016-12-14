@@ -35,7 +35,7 @@ export default class Header extends React.Component {
       <header className="nav-bar">
         <nav className="nav-menu">
           <div id="logo">
-            <span className="menu"><i className="fa fa-bars"></i></span>
+            <span className="menu"><i className="fa fa-bars" aria-hidden="true"></i></span>
             <Link to='/'>
               <img src={require("../images/purple-lotus-flower.png")} alt="logo" />
             </Link>

@@ -10,7 +10,7 @@ export default class Content extends Component {
   render (props) {
     return(
       <div className="content-main">
-        <h2>Content section</h2>
+        <h1>A Therapists' Blog</h1>
         {this.props.blog.map((entry, idx) => {
           console.log("blog entry: ", entry);
           return (<div key={idx}>

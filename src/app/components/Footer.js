@@ -5,13 +5,36 @@ export default class Footer extends React.Component {
     return(
       <footer className="footer">
         <div className="footerLeft">
-          Left
         </div>
         <div className="footerCenter">
-          <p><a href="//joniweiss.com">Created by Joni Weiss @ The Iron Yard</a></p>
+          <p>
+            <a  href="//www.linkedin.com/in/joniweiss?trk=hp-identity-name"
+              data-size="large" target="_blank">
+              <i className="fa fa-linkedin-square fa-2x"
+              aria-hidden="true"></i>&nbsp;&nbsp;
+            </a>
+          </p>
+
+          <p>
+            <a href="//twitter.com/joniw"
+              data-size="large" target="_blank">
+              <i className="fa fa-twitter-square fa-2x"
+              aria-hidden="true"></i>&nbsp;&nbsp;
+            </a>
+          </p>
+
+          <p>
+            <a href="//github.com/JoniWeiss"
+              data-size="large" target="_blank">
+              <i className="fa fa-github fa-2x"
+              aria-hidden="true"></i>&nbsp;&nbsp;
+            </a>
+          </p>
+
+          <p>Joni Andrea Weiss 2016</p>
+
         </div>
         <div className="footerRight">
-          Right
         </div>
       </footer>
     );

@@ -49,36 +49,40 @@ export default class Home extends Component {
     return (
       <div className="mainContent">
         <h1>Please Log In</h1>
-        <form onSubmit={this.login.bind(this)}>
-          <input
-            id="email"
-            type="email"
-            placeholder="Email"
-            onChange={e => this.setState({email: e.target.value})}
-          />
-          <input
-            id="password"
-            type="password"
-            placeholder="Password"
-            onChange={e => this.setState({password: e.target.value})}
-          />
-          <button
-            type='submit'
-            className={classnames("btn btn-action", {
-              hide: isAuthed
-            })}
-          >
-            Log In
-          </button>
-          <button
-            onClick={this.logout.bind(this)}
-            className={classnames("btn btn-action btnLogout", {
-             hide: !isAuthed
-            })}
+        <br /><br />
+        
+        <div className="flex">
+          <form onSubmit={this.login.bind(this)}>
+            <input
+              id="email"
+              type="email"
+              placeholder="Email"
+              onChange={e => this.setState({email: e.target.value})}
+            /><br /><br />
+            <input
+              id="password"
+              type="password"
+              placeholder="Password"
+              onChange={e => this.setState({password: e.target.value})}
+            /><br /><br />
+            <button
+              type='submit'
+              className={classnames("btn btn-action", {
+                hide: isAuthed
+              })}
             >
-            Log Out
-          </button>
-        </form>
+              Log In
+            </button><br /><br />
+            <button
+              onClick={this.logout.bind(this)}
+              className={classnames("btn btn-action btnLogout", {
+               hide: !isAuthed
+              })}
+              >
+              Log Out
+            </button>
+          </form>
+        </div>
       </div>
     );
   }
