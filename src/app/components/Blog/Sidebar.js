@@ -45,21 +45,12 @@ export default class Sidebar extends React.Component {
     let tagArr = rmvDups(this.props.tagArr);
     return(
       <div className="sidebar">
-        <h2>Filter results:</h2>
-        {/* <h3>Search</h3>
-        <input type="text"
-          defaultValue={this.props.defaultSearchStr} onChange={(event) => this.onHandleSearch(event) }>
-        </input>
-        <button
-          onClick={this.onSearch.bind(this)}>
-          Search
-        </button>
-      <br /><br /><hr /> */}
 
         <h3>Reset</h3>
         <div>
           <button id="reset-all" name="reset" onClick={this.onClickSelect.bind(this)}>All blog entries</button><br />
         </div>
+        
         <h3>Months</h3>
           {monthArr.map((month, idx) => {
           return  <div key={idx}>

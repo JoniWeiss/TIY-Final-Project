@@ -70,33 +70,53 @@ export default class Services extends Component {
       <div className="mainContent">
         <h1>Our Services</h1>
         <h2>Today is:</h2>
-        <p>{formatLongDate()}</p>
-
+        <p className="centeredText">{formatLongDate()}</p><br />
+        <hr />
         <h2>Services</h2>
-        <h3>At my location</h3>
-        <ul>
-          {this.state.services.filter(this.isIncall)
-          .map((obj, idx) => {
-            return (
-              <li key={idx}>
-                <p>{obj.serviceName}  ${obj.price}</p>
-              </li>
-            )
-          })}
-        </ul>
+        <div className="flex">
 
-        <h3>At your location</h3>
-        <ul>
-          {this.state.services.filter(this.isOutcall)
-          .map((obj, idx) => {
-            return (
-              <li key={idx}>
-                <p>{obj.serviceName}  ${obj.price}</p>
-              </li>
-            )
-          })}
-        </ul>
+          <div className="flexContent">
+            <p><h3>At my location</h3></p>
+            <hr />
 
+            <table>
+              <tr>
+                <th><p>Service:</p></th>
+                <th><p>Rate:</p></th>
+              </tr>
+              {this.state.services.filter(this.isIncall)
+              .map((obj, idx) => {
+                return (
+                  <tr key={idx}>
+                    <td><p>{obj.serviceName}</p></td>
+                    <td><p>${obj.price}</p></td>
+                  </tr>
+                )
+              })}
+            </table>
+          </div>
+
+          <div className="flexContent">
+            <p><h3>At your location</h3></p>
+            <hr />
+
+            <table>
+              <tr>
+                <th><p>Service:</p></th>
+                <th><p>Rate:</p></th>
+              </tr>
+              {this.state.services.filter(this.isOutcall)
+              .map((obj, idx) => {
+                return (
+                  <tr key={idx}>
+                    <td><p>{obj.serviceName}</p></td>
+                    <td><p>${obj.price}</p></td>
+                  </tr>
+                )
+              })}
+            </table>
+          </div>
+        </div>
       </div>
     )
   }

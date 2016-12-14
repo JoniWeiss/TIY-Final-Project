@@ -20,9 +20,12 @@ export default class Blog extends Component {
   }
 
   componentWillMount(){
-    this.setState({
-      blog: this.getBlog()
+    this.ref = base.syncState('blog', {
+      context: this,
+      state: 'blog',
+      asArray: true
     })
+    console.log(this.state.blog);
   }
   componentWillUnmount(){
     base.removeBinding(this.blogRef);

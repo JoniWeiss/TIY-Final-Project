@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router'
 import { base } from '../config/constants'
 
 import classnames from 'classnames'
@@ -24,7 +25,7 @@ export default class Home extends Component {
     base.auth().signInWithEmailAndPassword(email, password)
       .then( () => {
         this.resetForm()
-        window.location.reload();
+        window.location.back()
       })
       .catch( e => {
         console.log(e.message)
@@ -69,16 +70,15 @@ export default class Home extends Component {
           >
             Log In
           </button>
+          <button
+            onClick={this.logout.bind(this)}
+            className={classnames("btn btn-action btnLogout", {
+             hide: !isAuthed
+            })}
+            >
+            Log Out
+          </button>
         </form>
-        {/* <button className="btn btn-secondary">Sign Up</button> */}
-       <button
-         onClick={this.logout.bind(this)}
-         className={classnames("btn btn-action btnLogout", {
-           hide: !isAuthed
-         })}
-         >
-         Log Out
-        </button>
       </div>
     );
   }

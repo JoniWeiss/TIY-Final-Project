@@ -16,27 +16,26 @@ import Login from './Login'
 import Register from './Register'
 import Logout from './Logout'
 
-
 import AppSass from '../styles/App.sass';
 
-function MatchWhenAuthed ({component: Component, isAuthed, ...rest}) {
+function MatchWhenAuthed ({component: Component, authed, ...rest}) {
   return (
     <Match
       {...rest}
-      render={(props) => isAuthed === true
+      render={(props) => authed === true
         ? <Component {...props} />
         : <Redirect to={{pathname: '/login', state: {from: props.location}}} />}
     />
   )
 }
 
-function MatchWhenUnauthed ({component: Component, isAuthed, ...rest}) {
+function MatchWhenUnauthed ({component: Component, authed, ...rest}) {
   return (
     <Match
       {...rest}
-      render={(props) => isAuthed === false
+      render={(props) => authed === false
         ? <Component {...props} />
-      : <Redirect to='/schedule' />}
+        : <Redirect to='/' />}
     />
   )
 }
@@ -115,9 +114,9 @@ export default class App extends Component {
           <Match pattern='/about' component={About}/>
           <Match pattern='/contact-us' component={ContactUs}/>
           <Match pattern='/blog' component={Blog}/>
-          <Match pattern='/login' component={Login}/>
-          <Match pattern='/register' component={Register}/>
-          <Match pattern='/logout' component={Logout}/>
+          <MatchWhenUnauthed authed={this.state.isAuthed} pattern='/login' component={Login} />
+          <MatchWhenUnauthed authed={this.state.isAuthed} pattern='/register' component={Register} />
+          <MatchWhenAuthed authed={this.state.isAuthed} pattern='/logout' component={Logout} />
           <Miss render={() => <h3>No Match</h3>} />
           <Footer />
         </div>
