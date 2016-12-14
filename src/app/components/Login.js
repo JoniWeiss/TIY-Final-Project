@@ -19,7 +19,6 @@ export default class Home extends Component {
     e.preventDefault();
     //Get email and pass
     const { email, password } = this.state
-    console.log("email: " + email + " pass: " + password);
 
     //Sign in via Firebase
     base.auth().signInWithEmailAndPassword(email, password)
@@ -28,7 +27,6 @@ export default class Home extends Component {
         window.location.back()
       })
       .catch( e => {
-        console.log(e.message)
         this.resetForm()
       });
       // The rest will be handled by the firebase listener in the App.js
@@ -50,7 +48,7 @@ export default class Home extends Component {
       <div className="mainContent">
         <h1>Please Log In</h1>
         <br /><br />
-        
+
         <div className="flex">
           <form onSubmit={this.login.bind(this)}>
             <input

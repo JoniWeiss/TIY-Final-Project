@@ -22068,15 +22068,15 @@
 	
 	var _Login2 = _interopRequireDefault(_Login);
 	
-	var _Register = __webpack_require__(/*! ./Register */ 449);
+	var _Register = __webpack_require__(/*! ./Register */ 450);
 	
 	var _Register2 = _interopRequireDefault(_Register);
 	
-	var _Logout = __webpack_require__(/*! ./Logout */ 450);
+	var _Logout = __webpack_require__(/*! ./Logout */ 451);
 	
 	var _Logout2 = _interopRequireDefault(_Logout);
 	
-	var _App = __webpack_require__(/*! ../styles/App.sass */ 451);
+	var _App = __webpack_require__(/*! ../styles/App.sass */ 452);
 	
 	var _App2 = _interopRequireDefault(_App);
 	
@@ -22139,10 +22139,7 @@
 	
 	      this.removeListener = _constants.base.auth().onAuthStateChanged(function (user) {
 	        if (user) {
-	          console.log("Logged in: ", user.email, user.uid);
 	          _this2.handleAuthChange(true);
-	        } else {
-	          console.log("Not logged in");
 	        }
 	      });
 	    }
@@ -22161,7 +22158,6 @@
 	    value: function render() {
 	      var _this3 = this;
 	
-	      console.log("isAuthed: ", this.state.isAuthed);
 	      return _react2.default.createElement(
 	        _reactRouter.BrowserRouter,
 	        { history: _reactRouter.browserHistory },
@@ -28195,6 +28191,9 @@
 	      // for small screens
 	
 	      (0, _jquery2.default)(document).ready(function () {
+	        if ((0, _jquery2.default)('.menu').is(":visible")) {
+	          (0, _jquery2.default)('.menu-items').slideUp(0);
+	        }
 	        (0, _jquery2.default)('.menu').click(function () {
 	          (0, _jquery2.default)('.menu-items').slideDown(400, function () {
 	            (0, _jquery2.default)(this).click(function () {
@@ -28205,9 +28204,9 @@
 	      });
 	      (0, _jquery2.default)(window).resize(function () {
 	        var windowsize = (0, _jquery2.default)(window).width();
-	        if (windowsize > 480) {
+	        if (windowsize > 850) {
 	          (0, _jquery2.default)(".menu-items").css("display", "inline-block");
-	        } else if (windowsize <= 480) {
+	        } else if (windowsize <= 850) {
 	          (0, _jquery2.default)(".menu-items").css("display", "none");
 	        }
 	      });
@@ -28223,7 +28222,7 @@
 	            _react2.default.createElement(
 	              'span',
 	              { className: 'menu' },
-	              _react2.default.createElement('i', { className: 'fa fa-bars', 'aria-hidden': 'true' })
+	              _react2.default.createElement('i', { className: 'fa fa-bars fa-2x', 'aria-hidden': 'true' })
 	            ),
 	            _react2.default.createElement(
 	              _reactRouter.Link,
@@ -28239,7 +28238,7 @@
 	              null,
 	              _react2.default.createElement(
 	                'li',
-	                null,
+	                { className: 'navList' },
 	                _react2.default.createElement(
 	                  _reactRouter.Link,
 	                  { to: '/' },
@@ -28248,7 +28247,7 @@
 	              ),
 	              _react2.default.createElement(
 	                'li',
-	                null,
+	                { className: 'navList' },
 	                _react2.default.createElement(
 	                  _reactRouter.Link,
 	                  { to: '/services' },
@@ -28260,7 +28259,7 @@
 	                null,
 	                _react2.default.createElement(
 	                  'li',
-	                  null,
+	                  { className: 'navList' },
 	                  _react2.default.createElement(
 	                    _reactRouter.Link,
 	                    { to: '/schedule' },
@@ -28270,7 +28269,7 @@
 	              ) : _react2.default.createElement('span', null),
 	              _react2.default.createElement(
 	                'li',
-	                null,
+	                { className: 'navList' },
 	                _react2.default.createElement(
 	                  _reactRouter.Link,
 	                  { to: '/about' },
@@ -28279,7 +28278,7 @@
 	              ),
 	              _react2.default.createElement(
 	                'li',
-	                null,
+	                { className: 'navList' },
 	                _react2.default.createElement(
 	                  _reactRouter.Link,
 	                  { to: '/contact-us' },
@@ -28288,7 +28287,7 @@
 	              ),
 	              _react2.default.createElement(
 	                'li',
-	                null,
+	                { className: 'navList' },
 	                _react2.default.createElement(
 	                  _reactRouter.Link,
 	                  { to: '/blog' },
@@ -28300,7 +28299,7 @@
 	                null,
 	                _react2.default.createElement(
 	                  'li',
-	                  null,
+	                  { className: 'navList' },
 	                  _react2.default.createElement(
 	                    'a',
 	                    { href: '/', onClick: _auth.logout },
@@ -28313,7 +28312,7 @@
 	                _react2.default.createElement(
 	                  'li',
 	                  {
-	                    className: (0, _classnames2.default)("navItem", {
+	                    className: (0, _classnames2.default)("navItem navList", {
 	                      hide: isAuthed
 	                    }) },
 	                  _react2.default.createElement(
@@ -28325,7 +28324,7 @@
 	                _react2.default.createElement(
 	                  'li',
 	                  {
-	                    className: (0, _classnames2.default)("navItem", {
+	                    className: (0, _classnames2.default)("navItem navList", {
 	                      hide: isAuthed
 	                    }) },
 	                  _react2.default.createElement(
@@ -38719,7 +38718,7 @@
 	
 	
 	// module
-	exports.push([module.id, "header {\n  display: flex;\n  flex-wrap: nowrap;\n  justify-content: space-between;\n  align-items: center; }\n\n.nav-bar {\n  height: 7vh; }\n\n.nav-menu {\n  font-family: \"Ubuntu\", sans-serif;\n  background-color: black;\n  display: flex;\n  flex-wrap: nowrap;\n  justify-content: flex-start;\n  align-items: center;\n  color: white;\n  position: fixed;\n  top: 0;\n  width: 100vw;\n  text-align: left;\n  padding: 0 20px;\n  z-index: 10; }\n  .nav-menu #logo {\n    margin-right: 1em; }\n    .nav-menu #logo img {\n      background-color: white;\n      display: flex;\n      justify-content: flex-start;\n      align-self: center;\n      border: 2px solid rebeccapurple;\n      border-radius: 50%;\n      height: 6vh;\n      width: auto;\n      margin: .25em;\n      padding: .25em;\n      text-align: center;\n      z-index: -1; }\n  .nav-menu .menu {\n    display: none; }\n  .nav-menu .menu-items {\n    display: inline-block;\n    background-color: black;\n    align-self: flex-start;\n    white-space: nowrap;\n    list-style-type: none;\n    margin: 0; }\n    .nav-menu .menu-items li {\n      list-style: none;\n      display: inline-block;\n      border-left: 1px solid #b6c999;\n      padding: 1em 1.5em; }\n      .nav-menu .menu-items li a:link,\n      .nav-menu .menu-items li a:visited {\n        color: #b6c999;\n        font-weight: bold;\n        text-decoration: none; }\n    .nav-menu .menu-items li:last-child {\n      border-right: 1px solid #b6c999; }\n\n@media screen and (max-width: 480px) {\n  .nav-menu {\n    display: inline-block;\n    padding: 0; }\n    .nav-menu #logo {\n      display: flex;\n      flex-direction: row;\n      justify-content: flex-start;\n      align-self: flex-start; }\n    .nav-menu .menu {\n      background-color: black;\n      width: 100vw;\n      display: block;\n      padding: 1em .5em 1em .5em;\n      color: #b6c999;\n      font-weight: bold;\n      position: relative;\n      outline: 0;\n      transition: opacity .2s ease-in-out; }\n      .nav-menu .menu hover {\n        opacity: 0.6; }\n    .nav-menu .menu-items {\n      display: flex;\n      flex-direction: row;\n      justify-content: flex-start;\n      align-self: flex-start;\n      width: 200px;\n      height: auto;\n      margin: 0 0 0 -6px;\n      padding: 0;\n      background-color: #eee;\n      border-radius: 5px;\n      transition: visibility .5s;\n      z-index: 1; }\n      .nav-menu .menu-items ul {\n        width: 100vw; }\n        .nav-menu .menu-items ul li,\n        .nav-menu .menu-items ul .navItems {\n          display: flex;\n          padding: .5em;\n          border-bottom: 2px solid #b6c999; }\n          .nav-menu .menu-items ul li li:last-child,\n          .nav-menu .menu-items ul .navItems li:last-child {\n            border-bottom: none; }\n          .nav-menu .menu-items ul li li:hover,\n          .nav-menu .menu-items ul .navItems li:hover {\n            background-color: #222; } }\n", ""]);
+	exports.push([module.id, "header {\n  display: flex;\n  flex-wrap: nowrap;\n  justify-content: space-between;\n  align-items: center; }\n\n.nav-bar {\n  height: 5vh; }\n\n.nav-menu {\n  font-family: \"Ubuntu\", sans-serif;\n  background-color: black;\n  display: flex;\n  flex-wrap: nowrap;\n  justify-content: flex-start;\n  align-items: center;\n  color: white;\n  position: fixed;\n  top: 0;\n  width: 100vw;\n  text-align: left;\n  padding: 0 20px;\n  z-index: 10; }\n  .nav-menu #logo {\n    margin-right: 1em; }\n    .nav-menu #logo img {\n      background-color: white;\n      display: flex;\n      justify-content: flex-start;\n      align-self: center;\n      border: 2px solid rebeccapurple;\n      border-radius: 50%;\n      height: 4vh;\n      width: auto;\n      margin: .25em;\n      padding: .25em;\n      text-align: center;\n      z-index: -1; }\n  .nav-menu .menu {\n    display: none; }\n  .nav-menu .menu-items {\n    display: inline-block; }\n    .nav-menu .menu-items ul {\n      background-color: black;\n      align-self: flex-start;\n      white-space: nowrap;\n      margin: 0; }\n    .nav-menu .menu-items .navList {\n      list-style: none;\n      display: inline-block;\n      border-left: 1px solid #b6c999;\n      padding: 1em 1.5em; }\n      .nav-menu .menu-items .navList a:link,\n      .nav-menu .menu-items .navList a:visited {\n        color: #b6c999;\n        font-weight: bold;\n        text-decoration: none; }\n    .nav-menu .menu-items li:last-child {\n      border-right: 1px solid #b6c999; }\n\n@media screen and (max-width: 850px) {\n  .nav-menu {\n    display: inline-block;\n    padding: 0; }\n    .nav-menu #logo {\n      display: flex;\n      flex-direction: row;\n      justify-content: flex-start; }\n    .nav-menu .menu {\n      background-color: black;\n      width: 100vw;\n      display: block;\n      padding: 1em .5em 1em .5em;\n      color: #b6c999;\n      font-weight: bold;\n      position: relative;\n      outline: 0;\n      transition: opacity .2s ease-in-out; }\n      .nav-menu .menu hover {\n        opacity: 0.6; }\n    .nav-menu .menu-items {\n      display: flex;\n      flex-direction: row;\n      justify-content: flex-start;\n      width: 200px;\n      height: auto;\n      margin: 0 0 0 -6px;\n      padding: 0;\n      border-radius: 5px;\n      transition: visibility .5s;\n      z-index: 1; }\n      .nav-menu .menu-items ul {\n        width: 100vw; }\n        .nav-menu .menu-items ul .navList,\n        .nav-menu .menu-items ul .navItems {\n          display: flex;\n          padding: .5em;\n          border-bottom: 2px solid #b6c999; }\n          .nav-menu .menu-items ul .navList li:last-child,\n          .nav-menu .menu-items ul .navItems li:last-child {\n            border-bottom: none; }\n          .nav-menu .menu-items ul .navList li:hover,\n          .nav-menu .menu-items ul .navItems li:hover {\n            background-color: #222; } }\n", ""]);
 	
 	// exports
 
@@ -39089,18 +39088,7 @@
 	      return _react2.default.createElement(
 	        "footer",
 	        { className: "footer" },
-	        _react2.default.createElement(
-	          "div",
-	          { className: "footerLeft" },
-	          _react2.default.createElement(
-	            "a",
-	            { href: "https://twitter.com/joniw",
-	              "data-size": "large", target: "_blank" },
-	            _react2.default.createElement("i", { "class": "fa fa-twitter",
-	              "aria-hidden": "true" }),
-	            "Follow @joniw"
-	          )
-	        ),
+	        _react2.default.createElement("div", { className: "footerLeft" }),
 	        _react2.default.createElement(
 	          "div",
 	          { className: "footerCenter" },
@@ -39109,9 +39097,41 @@
 	            null,
 	            _react2.default.createElement(
 	              "a",
-	              { href: "//joniweiss.com" },
-	              "Created by Joni Weiss @ The Iron Yard"
+	              { href: "//www.linkedin.com/in/joniweiss?trk=hp-identity-name",
+	                "data-size": "large", target: "_blank" },
+	              _react2.default.createElement("i", { className: "fa fa-linkedin-square fa-2x",
+	                "aria-hidden": "true" }),
+	              "\xA0\xA0"
 	            )
+	          ),
+	          _react2.default.createElement(
+	            "p",
+	            null,
+	            _react2.default.createElement(
+	              "a",
+	              { href: "//twitter.com/joniw",
+	                "data-size": "large", target: "_blank" },
+	              _react2.default.createElement("i", { className: "fa fa-twitter-square fa-2x",
+	                "aria-hidden": "true" }),
+	              "\xA0\xA0"
+	            )
+	          ),
+	          _react2.default.createElement(
+	            "p",
+	            null,
+	            _react2.default.createElement(
+	              "a",
+	              { href: "//github.com/JoniWeiss",
+	                "data-size": "large", target: "_blank" },
+	              _react2.default.createElement("i", { className: "fa fa-github fa-2x",
+	                "aria-hidden": "true" }),
+	              "\xA0\xA0"
+	            )
+	          ),
+	          _react2.default.createElement(
+	            "p",
+	            null,
+	            "Joni Andrea Weiss 2016"
 	          )
 	        ),
 	        _react2.default.createElement("div", { className: "footerRight" })
@@ -39255,9 +39275,20 @@
 	          'div',
 	          { id: 'demoInfo' },
 	          _react2.default.createElement(
-	            'h3',
+	            'h2',
 	            null,
-	            'Demo login:'
+	            'Try The Demo!'
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'Scan the QR Code (above) on your mobile device.'
+	          ),
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'Log in to try the therapists\' scheduler:'
 	          ),
 	          _react2.default.createElement(
 	            'p',
@@ -39405,14 +39436,12 @@
 	          email = _state.email,
 	          password = _state.password;
 	
-	      console.log("email: " + email + " pass: " + password);
-	
 	      //Sign in via Firebase
+	
 	      _constants.base.auth().signInWithEmailAndPassword(email, password).then(function () {
 	        _this2.resetForm();
 	        window.location.back();
 	      }).catch(function (e) {
-	        console.log(e.message);
 	        _this2.resetForm();
 	      });
 	      // The rest will be handled by the firebase listener in the App.js
@@ -39446,44 +39475,56 @@
 	          null,
 	          'Please Log In'
 	        ),
+	        _react2.default.createElement('br', null),
+	        _react2.default.createElement('br', null),
 	        _react2.default.createElement(
-	          'form',
-	          { onSubmit: this.login.bind(this) },
-	          _react2.default.createElement('input', {
-	            id: 'email',
-	            type: 'email',
-	            placeholder: 'Email',
-	            onChange: function onChange(e) {
-	              return _this3.setState({ email: e.target.value });
-	            }
-	          }),
-	          _react2.default.createElement('input', {
-	            id: 'password',
-	            type: 'password',
-	            placeholder: 'Password',
-	            onChange: function onChange(e) {
-	              return _this3.setState({ password: e.target.value });
-	            }
-	          }),
+	          'div',
+	          { className: 'flex' },
 	          _react2.default.createElement(
-	            'button',
-	            {
-	              type: 'submit',
-	              className: (0, _classnames2.default)("btn btn-action", {
-	                hide: isAuthed
-	              })
-	            },
-	            'Log In'
-	          ),
-	          _react2.default.createElement(
-	            'button',
-	            {
-	              onClick: this.logout.bind(this),
-	              className: (0, _classnames2.default)("btn btn-action btnLogout", {
-	                hide: !isAuthed
-	              })
-	            },
-	            'Log Out'
+	            'form',
+	            { onSubmit: this.login.bind(this) },
+	            _react2.default.createElement('input', {
+	              id: 'email',
+	              type: 'email',
+	              placeholder: 'Email',
+	              onChange: function onChange(e) {
+	                return _this3.setState({ email: e.target.value });
+	              }
+	            }),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement('input', {
+	              id: 'password',
+	              type: 'password',
+	              placeholder: 'Password',
+	              onChange: function onChange(e) {
+	                return _this3.setState({ password: e.target.value });
+	              }
+	            }),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(
+	              'button',
+	              {
+	                type: 'submit',
+	                className: (0, _classnames2.default)("btn btn-action", {
+	                  hide: isAuthed
+	                })
+	              },
+	              'Log In'
+	            ),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(
+	              'button',
+	              {
+	                onClick: this.logout.bind(this),
+	                className: (0, _classnames2.default)("btn btn-action btnLogout", {
+	                  hide: !isAuthed
+	                })
+	              },
+	              'Log Out'
+	            )
 	          )
 	        )
 	      );
@@ -39568,7 +39609,6 @@
 	        state: 'blog',
 	        asArray: true
 	      });
-	      console.log(this.state.blog);
 	    }
 	  }, {
 	    key: 'componentWillUnmount',
@@ -39589,10 +39629,10 @@
 	        context: this,
 	        asArray: true
 	      }).then(function (blog) {
-	        console.log("getBlog(success!): ", blog);
+	        console.log("getBlog(success!)");
 	      }).catch(function (error) {
 	        //handle error
-	        console.log("getServices(error): ", error);
+	        console.log("getServices(error)");
 	      });
 	    }
 	  }, {
@@ -39826,12 +39866,11 @@
 	        'div',
 	        { className: 'content-main' },
 	        _react2.default.createElement(
-	          'h2',
+	          'h1',
 	          null,
-	          'Content section'
+	          'A Therapists\' Blog'
 	        ),
 	        this.props.blog.map(function (entry, idx) {
-	          console.log("blog entry: ", entry);
 	          return _react2.default.createElement(
 	            'div',
 	            { key: idx },
@@ -55146,13 +55185,11 @@
 	
 	function timeNow(formatStr) {
 	  var now = moment().format(formatStr);
-	  console.log("Now is: ", now);
 	  return now;
 	}
 	
 	function getDay(formatStr) {
 	  var now = moment().format(formatStr);
-	  console.log("Now is: ", now);
 	  return now;
 	}
 	
@@ -72384,7 +72421,6 @@
 	  }, {
 	    key: 'handleAddItem',
 	    value: function handleAddItem(newItem) {
-	      console.log("handleAddItem: ", newItem);
 	      this.setState({
 	        services: this.state.services.concat([newItem])
 	      });
@@ -72395,7 +72431,6 @@
 	  }, {
 	    key: 'handleRemoveItem',
 	    value: function handleRemoveItem(index) {
-	      console.log("handleRemoveItem: ", index);
 	      var newList = this.state.services;
 	      newList.splice(index, 1);
 	      this.setState({
@@ -72409,10 +72444,10 @@
 	        context: this,
 	        asArray: true
 	      }).then(function (data) {
-	        console.log("getServices(success!): ", data);
+	        console.log("getServices(success!)");
 	      }).catch(function (error) {
 	        //handle error
-	        console.log("getServices(error): ", error);
+	        console.log("getServices(error)");
 	      });
 	    }
 	  }, {
@@ -72432,7 +72467,6 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      console.log("services: ", this.state.services);
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'mainContent' },
@@ -72695,14 +72729,13 @@
 	
 	  }, {
 	    key: 'handleRemoveItem',
-	    value: function handleRemoveItem(apptObj) {
-	      // var newList = this.state.schedule;
-	      console.log("handleRemoveItem: ", apptObj);
-	      // newList.splice(apptObj, 1);
-	      // this.setState({
-	      //   schedule: newList
-	      // })
-	    }
+	    value: function handleRemoveItem(apptObj) {}
+	    // var newList = this.state.schedule;
+	    // newList.splice(apptObj, 1);
+	    // this.setState({
+	    //   schedule: newList
+	    // })
+	
 	
 	    //TODO: Add getNextAppointment functionality
 	
@@ -73057,10 +73090,8 @@
 	  _createClass(NewAppointment, [{
 	    key: 'handleDateChange',
 	    value: function handleDateChange(e) {
-	      // console.log("handleDateChange: ", e);
 	      var newDate = (0, _moment2.default)(e, "MM/DD/YY hh:mm A").format("YYYY-MM-DDTHH:mm:ssZ");
 	      newSchedule.date = newDate;
-	      // console.log(newSchedule);
 	    }
 	  }, {
 	    key: 'handleDurationChange',
@@ -73085,7 +73116,6 @@
 	  }, {
 	    key: 'handleAdd',
 	    value: function handleAdd() {
-	      // console.log(newSchedule);
 	      this.setState({
 	        newSchedule: newSchedule
 	      });
@@ -80163,7 +80193,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".flex {\n  display: flex;\n  flex-wrap: wrap;\n  flex-grow: 1;\n  justify-content: center;\n  border-radius: 2px; }\n\n.flexContent {\n  background-color: #f1f1f1;\n  align-items: center;\n  min-width: 250px;\n  flex: 1 1 0;\n  margin-left: 1.5em;\n  margin-right: 1.5em;\n  max-width: 304px;\n  display: flex;\n  flex-direction: column; }\n\nform input, form textArea, form button, form select {\n  font-size: 1.25em; }\n", ""]);
+	exports.push([module.id, "form input, form textArea, form button, form select {\n  font-size: 1.25em; }\n", ""]);
 	
 	// exports
 
@@ -80215,6 +80245,8 @@
 	          null,
 	          "About Us"
 	        ),
+	        _react2.default.createElement("br", null),
+	        _react2.default.createElement("br", null),
 	        _react2.default.createElement(
 	          "p",
 	          null,
@@ -80228,22 +80260,36 @@
 	        _react2.default.createElement(
 	          "ul",
 	          null,
+	          _react2.default.createElement("br", null),
 	          _react2.default.createElement(
 	            "li",
 	            null,
-	            "Home, About, Contact pages"
+	            _react2.default.createElement(
+	              "p",
+	              null,
+	              "Home, About, Contact pages"
+	            )
 	          ),
 	          _react2.default.createElement(
 	            "li",
 	            null,
-	            "Services \"menu\""
+	            _react2.default.createElement(
+	              "p",
+	              null,
+	              "Services \"menu\""
+	            )
 	          ),
 	          _react2.default.createElement(
 	            "li",
 	            null,
-	            "Therapists' Blog"
+	            _react2.default.createElement(
+	              "p",
+	              null,
+	              "Therapists' Blog"
+	            )
 	          )
 	        ),
+	        _react2.default.createElement("br", null),
 	        _react2.default.createElement(
 	          "p",
 	          null,
@@ -80252,22 +80298,36 @@
 	        _react2.default.createElement(
 	          "ul",
 	          null,
+	          _react2.default.createElement("br", null),
 	          _react2.default.createElement(
 	            "li",
 	            null,
-	            "Therapists' Schedule"
+	            _react2.default.createElement(
+	              "p",
+	              null,
+	              "Therapists' Schedule"
+	            )
 	          ),
 	          _react2.default.createElement(
 	            "li",
 	            null,
-	            "Client Database"
+	            _react2.default.createElement(
+	              "p",
+	              null,
+	              "Client Database"
+	            )
 	          ),
 	          _react2.default.createElement(
 	            "li",
 	            null,
-	            "Site content management"
+	            _react2.default.createElement(
+	              "p",
+	              null,
+	              "Site content management"
+	            )
 	          )
 	        ),
+	        _react2.default.createElement("br", null),
 	        _react2.default.createElement(
 	          "p",
 	          null,
@@ -80323,11 +80383,82 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        "div",
-	        { className: "mainContent" },
+	        { className: "centeredText mainContent" },
 	        _react2.default.createElement(
 	          "h1",
 	          null,
 	          "Contact Us"
+	        ),
+	        _react2.default.createElement("br", null),
+	        _react2.default.createElement("br", null),
+	        _react2.default.createElement(
+	          "p",
+	          null,
+	          "This is where therapist contact information will belong. "
+	        ),
+	        _react2.default.createElement(
+	          "h1",
+	          null,
+	          "Address and Map"
+	        ),
+	        _react2.default.createElement(
+	          "p",
+	          null,
+	          "Call us: ",
+	          _react2.default.createElement(
+	            "a",
+	            { href: "tel:801-948-3149" },
+	            "801-948-3149"
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "p",
+	          null,
+	          "Email us: ",
+	          _react2.default.createElement(
+	            "a",
+	            { href: "mailto:me@joniweiss.com" },
+	            "me@joniweiss.com"
+	          )
+	        ),
+	        _react2.default.createElement("br", null),
+	        _react2.default.createElement(
+	          "h1",
+	          null,
+	          "Address and Map"
+	        ),
+	        _react2.default.createElement(
+	          "div",
+	          null,
+	          _react2.default.createElement(
+	            "a",
+	            { href: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.9506754934837!2d-111.8938183845935!3d40.76310957932634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8752f50fe5b827f9%3A0xe6de13b82471db4f!2s10+Broadway%2C+Salt+Lake+City%2C+UT+84101!5e0!3m2!1sen!2sus!4v1481755621439", target: "_blank" },
+	            _react2.default.createElement(
+	              "div",
+	              null,
+	              _react2.default.createElement(
+	                "p",
+	                null,
+	                _react2.default.createElement(
+	                  "strong",
+	                  null,
+	                  "Find us at 10 West 300 South, Suite 310, Salt Lake City Utah 84101. ",
+	                  _react2.default.createElement("br", null)
+	                )
+	              )
+	            ),
+	            _react2.default.createElement(
+	              "div",
+	              null,
+	              _react2.default.createElement(
+	                "p",
+	                null,
+	                _react2.default.createElement("img", { src: __webpack_require__(/*! ../images/iron-yard-map.png */ 449), alt: "Map to The Iron Yard on 10 West 300 South, Suite 310, Salt Lake City Utah 84101" }),
+	                _react2.default.createElement("br", null),
+	                _react2.default.createElement("br", null)
+	              )
+	            )
+	          )
 	        )
 	      );
 	    }
@@ -80340,6 +80471,15 @@
 
 /***/ },
 /* 449 */
+/*!******************************************!*\
+  !*** ./src/app/images/iron-yard-map.png ***!
+  \******************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "src/app/images/iron-yard-map.png?aaec75e6fa";
+
+/***/ },
+/* 450 */
 /*!****************************************!*\
   !*** ./src/app/components/Register.js ***!
   \****************************************/
@@ -80395,37 +80535,35 @@
 	          null,
 	          'Register'
 	        ),
+	        _react2.default.createElement('br', null),
+	        _react2.default.createElement('br', null),
 	        _react2.default.createElement(
-	          'form',
-	          { onSubmit: this.handleSubmit },
+	          'div',
+	          { className: 'flex' },
 	          _react2.default.createElement(
-	            'div',
-	            { className: 'form-group' },
+	            'form',
+	            { onSubmit: this.handleSubmit },
 	            _react2.default.createElement(
-	              'label',
-	              null,
-	              'Email'
+	              'div',
+	              { className: 'form-group' },
+	              _react2.default.createElement('input', { className: 'form-control', ref: function ref(email) {
+	                  return _this2.email = email;
+	                }, placeholder: 'Email' })
 	            ),
-	            _react2.default.createElement('input', { className: 'form-control', ref: function ref(email) {
-	                return _this2.email = email;
-	              }, placeholder: 'Email' })
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'form-group' },
+	            _react2.default.createElement('br', null),
 	            _react2.default.createElement(
-	              'label',
-	              null,
-	              'Password'
+	              'div',
+	              { className: 'form-group' },
+	              _react2.default.createElement('input', { type: 'password', className: 'form-control', placeholder: 'Password', ref: function ref(pw) {
+	                  return _this2.pw = pw;
+	                } })
 	            ),
-	            _react2.default.createElement('input', { type: 'password', className: 'form-control', placeholder: 'Password', ref: function ref(pw) {
-	                return _this2.pw = pw;
-	              } })
-	          ),
-	          _react2.default.createElement(
-	            'button',
-	            { type: 'submit', className: 'btn btn-primary' },
-	            'Register'
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(
+	              'button',
+	              { type: 'submit', className: 'btn btn-primary' },
+	              'Register'
+	            )
 	          )
 	        )
 	      );
@@ -80438,7 +80576,7 @@
 	exports.default = Register;
 
 /***/ },
-/* 450 */
+/* 451 */
 /*!**************************************!*\
   !*** ./src/app/components/Logout.js ***!
   \**************************************/
@@ -80512,7 +80650,7 @@
 	exports.default = Logout;
 
 /***/ },
-/* 451 */
+/* 452 */
 /*!*********************************!*\
   !*** ./src/app/styles/App.sass ***!
   \*********************************/
@@ -80521,7 +80659,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./App.sass */ 452);
+	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./App.sass */ 453);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 233)(content, {});
@@ -80541,7 +80679,7 @@
 	}
 
 /***/ },
-/* 452 */
+/* 453 */
 /*!****************************************************************!*\
   !*** ./~/css-loader!./~/sass-loader!./src/app/styles/App.sass ***!
   \****************************************************************/
@@ -80552,7 +80690,7 @@
 	
 	
 	// module
-	exports.push([module.id, "#frontImage {\n  background: url(" + __webpack_require__(/*! ../images/front-image.png */ 240) + ");\n  background-position: center center;\n  background-size: cover;\n  width: 100vw;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center; }\n  #frontImage #appTitle {\n    text-transform: uppercase;\n    font-weight: lighter;\n    letter-spacing: 2px;\n    width: 100vw;\n    font-size: 3em;\n    color: #E7FFC2;\n    text-align: center; }\n  #frontImage #qrCode {\n    width: 200px;\n    height: auto;\n    margin: 2em; }\n  #frontImage #demoInfo {\n    background-color: #DAC2FF;\n    border: 2px solid black;\n    border-radius: 5px;\n    text-align: center;\n    padding: 0 1em 1em 1em; }\n\n.textOutline {\n  color: #EDF7DE;\n  text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue; }\n\n.flex {\n  display: flex;\n  flex-wrap: wrap;\n  flex-grow: 1;\n  justify-content: center;\n  border-radius: 2px; }\n\n.flexContent {\n  background-color: #f1f1f1;\n  align-items: center;\n  min-width: 250px;\n  flex: 1 1 0;\n  margin-left: 1.5em;\n  margin-right: 1.5em;\n  max-width: 304px;\n  display: flex;\n  flex-direction: column; }\n\nform input, form textArea, form button, form select {\n  font-size: 1.25em; }\n\ntr {\n  text-align: left; }\n\ntd {\n  padding-left: .5em;\n  padding-right: .5em; }\n\n.content-main {\n  padding: 1em;\n  flex-basis: 70%; }\n  .content-main li {\n    margin-left: 1em; }\n\n.content {\n  background-color: rgba(181, 201, 149, 0.1);\n  display: flex;\n  flex-direction: row;\n  align-items: stretch;\n  min-height: 86vh; }\n\n.mainContent {\n  min-height: 86vh; }\n\n.entry-title {\n  padding-bottom: .25em; }\n\n.entry-article {\n  text-align: justify; }\n\nheader {\n  display: flex;\n  flex-wrap: nowrap;\n  justify-content: space-between;\n  align-items: center; }\n\n.nav-bar {\n  height: 7vh; }\n\n.nav-menu {\n  font-family: \"Ubuntu\", sans-serif;\n  background-color: black;\n  display: flex;\n  flex-wrap: nowrap;\n  justify-content: flex-start;\n  align-items: center;\n  color: white;\n  position: fixed;\n  top: 0;\n  width: 100vw;\n  text-align: left;\n  padding: 0 20px;\n  z-index: 10; }\n  .nav-menu #logo {\n    margin-right: 1em; }\n    .nav-menu #logo img {\n      background-color: white;\n      display: flex;\n      justify-content: flex-start;\n      align-self: center;\n      border: 2px solid rebeccapurple;\n      border-radius: 50%;\n      height: 6vh;\n      width: auto;\n      margin: .25em;\n      padding: .25em;\n      text-align: center;\n      z-index: -1; }\n  .nav-menu .menu {\n    display: none; }\n  .nav-menu .menu-items {\n    display: inline-block;\n    background-color: black;\n    align-self: flex-start;\n    white-space: nowrap;\n    list-style-type: none;\n    margin: 0; }\n    .nav-menu .menu-items li {\n      list-style: none;\n      display: inline-block;\n      border-left: 1px solid #b6c999;\n      padding: 1em 1.5em; }\n      .nav-menu .menu-items li a:link,\n      .nav-menu .menu-items li a:visited {\n        color: #b6c999;\n        font-weight: bold;\n        text-decoration: none; }\n    .nav-menu .menu-items li:last-child {\n      border-right: 1px solid #b6c999; }\n\n@media screen and (max-width: 480px) {\n  .nav-menu {\n    display: inline-block;\n    padding: 0; }\n    .nav-menu #logo {\n      display: flex;\n      flex-direction: row;\n      justify-content: flex-start;\n      align-self: flex-start; }\n    .nav-menu .menu {\n      background-color: black;\n      width: 100vw;\n      display: block;\n      padding: 1em .5em 1em .5em;\n      color: #b6c999;\n      font-weight: bold;\n      position: relative;\n      outline: 0;\n      transition: opacity .2s ease-in-out; }\n      .nav-menu .menu hover {\n        opacity: 0.6; }\n    .nav-menu .menu-items {\n      display: flex;\n      flex-direction: row;\n      justify-content: flex-start;\n      align-self: flex-start;\n      width: 200px;\n      height: auto;\n      margin: 0 0 0 -6px;\n      padding: 0;\n      background-color: #eee;\n      border-radius: 5px;\n      transition: visibility .5s;\n      z-index: 1; }\n      .nav-menu .menu-items ul {\n        width: 100vw; }\n        .nav-menu .menu-items ul li,\n        .nav-menu .menu-items ul .navItems {\n          display: flex;\n          padding: .5em;\n          border-bottom: 2px solid #b6c999; }\n          .nav-menu .menu-items ul li li:last-child,\n          .nav-menu .menu-items ul .navItems li:last-child {\n            border-bottom: none; }\n          .nav-menu .menu-items ul li li:hover,\n          .nav-menu .menu-items ul .navItems li:hover {\n            background-color: #222; } }\n\n.footer {\n  background-color: #AC99C9;\n  min-height: 7vh;\n  text-align: center;\n  padding: .5em;\n  display: flex;\n  flex-direction: row;\n  flex-grow: 1;\n  flex-wrap: nowrap;\n  justify-content: space-between; }\n\n.sidebar {\n  padding: 1em;\n  flex-basis: 30%; }\n\n@media (max-width: 800px) {\n  .content {\n    flex-direction: column; } }\n\n* {\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0; }\n\nbody {\n  background-color: #eee;\n  display: flex;\n  flex-direction: column; }\n\nh1, h2, h3, h4 {\n  padding-top: 1em;\n  font-family: \"Ubuntu\", sans-serif; }\n\nh1, h2 {\n  text-align: center; }\n\np {\n  font-family: \"Roboto\", sans-serif;\n  font-size: 1.25em; }\n\n.centeredText {\n  text-align: center; }\n\n.hide {\n  display: none; }\n", ""]);
+	exports.push([module.id, "#frontImage {\n  background: url(" + __webpack_require__(/*! ../images/front-image.png */ 240) + ");\n  background-position: center center;\n  background-size: cover;\n  width: 100vw;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center; }\n  #frontImage #appTitle {\n    text-transform: uppercase;\n    font-weight: lighter;\n    letter-spacing: 2px;\n    width: 100vw;\n    font-size: 3em;\n    color: #E7FFC2;\n    text-align: center; }\n  #frontImage #qrCode {\n    width: 200px;\n    height: auto;\n    margin: 2em; }\n  #frontImage #demoInfo {\n    background-color: #DAC2FF;\n    border: 2px solid black;\n    border-radius: 5px;\n    text-align: center;\n    padding: 0 1em 1em 1em; }\n\n.textOutline {\n  color: #EDF7DE;\n  text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue; }\n\nform input, form textArea, form button, form select {\n  font-size: 1.25em; }\n\ntr {\n  text-align: left; }\n\ntd {\n  padding-left: .5em;\n  padding-right: .5em; }\n\n.content-main {\n  padding: 1em;\n  flex-basis: 70%; }\n\n.content {\n  background-color: rgba(181, 201, 149, 0.1);\n  display: flex;\n  flex-direction: row;\n  align-items: stretch;\n  min-height: 90vh; }\n\n.mainContent {\n  padding: 2em;\n  min-height: 90vh; }\n  .mainContent li {\n    margin-left: 1em; }\n\n.entry-title {\n  padding-bottom: .25em; }\n\n.entry-article {\n  text-align: justify; }\n\nheader {\n  display: flex;\n  flex-wrap: nowrap;\n  justify-content: space-between;\n  align-items: center; }\n\n.nav-bar {\n  height: 5vh; }\n\n.nav-menu {\n  font-family: \"Ubuntu\", sans-serif;\n  background-color: black;\n  display: flex;\n  flex-wrap: nowrap;\n  justify-content: flex-start;\n  align-items: center;\n  color: white;\n  position: fixed;\n  top: 0;\n  width: 100vw;\n  text-align: left;\n  padding: 0 20px;\n  z-index: 10; }\n  .nav-menu #logo {\n    margin-right: 1em; }\n    .nav-menu #logo img {\n      background-color: white;\n      display: flex;\n      justify-content: flex-start;\n      align-self: center;\n      border: 2px solid rebeccapurple;\n      border-radius: 50%;\n      height: 4vh;\n      width: auto;\n      margin: .25em;\n      padding: .25em;\n      text-align: center;\n      z-index: -1; }\n  .nav-menu .menu {\n    display: none; }\n  .nav-menu .menu-items {\n    display: inline-block; }\n    .nav-menu .menu-items ul {\n      background-color: black;\n      align-self: flex-start;\n      white-space: nowrap;\n      margin: 0; }\n    .nav-menu .menu-items .navList {\n      list-style: none;\n      display: inline-block;\n      border-left: 1px solid #b6c999;\n      padding: 1em 1.5em; }\n      .nav-menu .menu-items .navList a:link,\n      .nav-menu .menu-items .navList a:visited {\n        color: #b6c999;\n        font-weight: bold;\n        text-decoration: none; }\n    .nav-menu .menu-items li:last-child {\n      border-right: 1px solid #b6c999; }\n\n@media screen and (max-width: 850px) {\n  .nav-menu {\n    display: inline-block;\n    padding: 0; }\n    .nav-menu #logo {\n      display: flex;\n      flex-direction: row;\n      justify-content: flex-start; }\n    .nav-menu .menu {\n      background-color: black;\n      width: 100vw;\n      display: block;\n      padding: 1em .5em 1em .5em;\n      color: #b6c999;\n      font-weight: bold;\n      position: relative;\n      outline: 0;\n      transition: opacity .2s ease-in-out; }\n      .nav-menu .menu hover {\n        opacity: 0.6; }\n    .nav-menu .menu-items {\n      display: flex;\n      flex-direction: row;\n      justify-content: flex-start;\n      width: 200px;\n      height: auto;\n      margin: 0 0 0 -6px;\n      padding: 0;\n      border-radius: 5px;\n      transition: visibility .5s;\n      z-index: 1; }\n      .nav-menu .menu-items ul {\n        width: 100vw; }\n        .nav-menu .menu-items ul .navList,\n        .nav-menu .menu-items ul .navItems {\n          display: flex;\n          padding: .5em;\n          border-bottom: 2px solid #b6c999; }\n          .nav-menu .menu-items ul .navList li:last-child,\n          .nav-menu .menu-items ul .navItems li:last-child {\n            border-bottom: none; }\n          .nav-menu .menu-items ul .navList li:hover,\n          .nav-menu .menu-items ul .navItems li:hover {\n            background-color: #222; } }\n\n.footer {\n  background-color: #AC99C9;\n  min-height: 5vh;\n  text-align: center;\n  padding: .5em;\n  display: flex;\n  flex-direction: row;\n  flex-grow: 1;\n  justify-content: space-between; }\n  .footer .footerLeft,\n  .footer .footerCenter,\n  .footer .footerRight {\n    display: flex;\n    flex-direction: row;\n    flex-wrap: nowrap;\n    justify-content: flex-start;\n    align-items: center; }\n    .footer .footerLeft a, .footer .footerLeft a:link, .footer .footerLeft a:visited,\n    .footer .footerCenter a,\n    .footer .footerCenter a:link,\n    .footer .footerCenter a:visited,\n    .footer .footerRight a,\n    .footer .footerRight a:link,\n    .footer .footerRight a:visited {\n      color: darkslategrey;\n      text-decoration: none;\n      cursor: auto; }\n\n.sidebar {\n  padding: 1em;\n  flex-basis: 30%; }\n\n* {\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0; }\n\nbody {\n  background-color: #eee;\n  display: flex;\n  flex-direction: column; }\n\nh1, h2, h3, h4 {\n  padding-top: 1em;\n  font-family: \"Ubuntu\", sans-serif; }\n\nh1, h2 {\n  text-align: center; }\n\np {\n  font-family: \"Roboto\", sans-serif;\n  font-size: 1.25em; }\n\n.centeredText {\n  text-align: center; }\n\n.hide {\n  display: none; }\n\n.flex {\n  display: flex;\n  flex-wrap: wrap;\n  flex-grow: 1;\n  justify-content: center;\n  border-radius: 2px; }\n\n.flexContent {\n  background-color: #f1f1f1;\n  align-items: center;\n  min-width: 250px;\n  flex: 1 1 0;\n  margin-left: 1.5em;\n  margin-right: 1.5em;\n  max-width: 304px;\n  display: flex;\n  flex-direction: column; }\n", ""]);
 	
 	// exports
 

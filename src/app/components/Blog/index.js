@@ -25,7 +25,6 @@ export default class Blog extends Component {
       state: 'blog',
       asArray: true
     })
-    console.log(this.state.blog);
   }
   componentWillUnmount(){
     base.removeBinding(this.blogRef);
@@ -42,10 +41,10 @@ export default class Blog extends Component {
       context: this,
       asArray: true
     }).then(blog => {
-      console.log("getBlog(success!): ", blog);
+      console.log("getBlog(success!)");
     }).catch(error => {
       //handle error
-      console.log("getServices(error): ", error);
+      console.log("getServices(error)");
     })
   }
 

@@ -53,10 +53,8 @@ export default class NewAppointment extends Component {
   }
 
 handleDateChange (e) {
-  // console.log("handleDateChange: ", e);
   let newDate = moment(e, "MM/DD/YY hh:mm A").format("YYYY-MM-DDTHH:mm:ssZ")
   newSchedule.date = newDate
-  // console.log(newSchedule);
 }
 
 handleDurationChange (e) {
@@ -76,7 +74,6 @@ handleNoteChange (e) {
 }
 
 handleAdd () {
-  // console.log(newSchedule);
   this.setState({
     newSchedule: newSchedule
   })

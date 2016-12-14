@@ -12,7 +12,6 @@ export default class Content extends Component {
       <div className="content-main">
         <h1>A Therapists' Blog</h1>
         {this.props.blog.map((entry, idx) => {
-          console.log("blog entry: ", entry);
           return (<div key={idx}>
             <h3 className="entry-title">
               {entry.title}<br /><br />

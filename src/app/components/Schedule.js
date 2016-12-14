@@ -49,7 +49,6 @@ export default class Schedule extends Component {
   //TODO: This needs to work for objects - not arrays
   handleRemoveItem(apptObj){
     // var newList = this.state.schedule;
-    console.log("handleRemoveItem: ", apptObj);
     // newList.splice(apptObj, 1);
     // this.setState({
     //   schedule: newList

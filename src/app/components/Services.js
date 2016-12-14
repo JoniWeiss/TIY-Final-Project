@@ -24,7 +24,6 @@ export default class Services extends Component {
 
   //TODO: This needs to work for objects - not arrays
   handleAddItem(newItem){
-    console.log("handleAddItem: ", newItem);
     this.setState({
       services: this.state.services.concat([newItem])
     });
@@ -32,7 +31,6 @@ export default class Services extends Component {
 
   //TODO: This needs to work for objects - not arrays
   handleRemoveItem(index){
-    console.log("handleRemoveItem: ", index);
     var newList = this.state.services;
     newList.splice(index, 1);
     this.setState({
@@ -45,10 +43,10 @@ export default class Services extends Component {
       context: this,
       asArray: true
     }).then(data => {
-      console.log("getServices(success!): ", data);
+      console.log("getServices(success!)");
     }).catch(error => {
       //handle error
-      console.log("getServices(error): ", error);
+      console.log("getServices(error)");
     })
   }
 
@@ -65,7 +63,6 @@ export default class Services extends Component {
   }
 
   render() {
-    console.log("services: ", this.state.services);
     return (
       <div className="mainContent">
         <h1>Our Services</h1>

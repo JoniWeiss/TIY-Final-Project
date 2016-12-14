@@ -55,10 +55,7 @@ export default class App extends Component {
   componentWillMount () {
     this.removeListener = base.auth().onAuthStateChanged((user) => {
       if (user) {
-        console.log("Logged in: ", user.email, user.uid);
         this.handleAuthChange(true)
-      } else {
-        console.log("Not logged in");
       }})
   }
 
@@ -71,7 +68,6 @@ export default class App extends Component {
   }
 
   render () {
-    console.log("isAuthed: ", this.state.isAuthed);
     return (
       <Router history={browserHistory}>
         <div className='container'>

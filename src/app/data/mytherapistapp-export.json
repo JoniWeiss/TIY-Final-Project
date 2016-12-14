@@ -1,0 +1,392 @@
+{
+  "availability" : [ {
+    "client" : "Brenda",
+    "date" : "2017-01-05",
+    "endTime" : 90,
+    "isRecurring" : true,
+    "location" : "LotusMind Studio",
+    "note" : "Some note",
+    "recurrence" : "weekly",
+    "startTime" : false,
+    "therapist" : "Joni"
+  } ],
+  "blog" : [ {
+    "article" : [ "We expect a lot more from websites and web apps than we did 5 or 10 years ago. Today it is critical to think in terms of scale and responsiveness... to think in terms of the reality of mobile data bandwidth and screen sizes, resolutions, and viewport dimensions. Today there are very few sites that can get away with a one-size fits all design. We simply must think mobile when thinking of the view or presentation aspect of our web development projects.", "While we are allowed to make our own decisions regarding CSS frameworks we use for our projects at The Iron Yard, our instructor has presented FlexBox as an alternative to using a CSS framework like Bootstrap, Foundation, etc. It's true that each approach has a learning curve, but CSS3's FlexBox really makes me think more about how components on my webpages flow and how they respond to various screen sizes. I've worked with Bootstrap and Zurb's Foundation for over a year now, but FlexBox is rapidly growing on me and becoming my framework of choice for site layout. It's simple, relatively straight forward, and extremely light weight compared to any other option.", "Likewise, I've been learning to use Sass to style my projects. It's funny how I've avoided this for some time, and now that I'm using it, I can't imagine ever going back to simply using CSS except for very small projects. With Sass, I can create variables that can be reused throughout the site. Case in point:  Set the site's color palette using Sass variables, and BAM! you no longer have to think about the color codes for the rest of the site! If you want to change any one of those colors, you no longer have to search through CSS files for every single occurrence of the color -- simply make one change (the color assigned to the variable) and you're done.", "Using CSS frameworks and CSS pre-processors like SASS simplify website layout and design, while helping to meet modern web UX requirements. Welcome to the web development in the 21st century." ],
+    "entryDate" : "2016-11-05T18:10:47-07:00",
+    "tags" : [ "Responsive Design", "Software Development", "Web Development", "Front End Development", "Women in Tech" ],
+    "title" : "Sass, Flexbox, Viewports and Responsive Design"
+  }, {
+    "article" : [ "Half way through our 12-week journey @ The Iron Yard Front End Engineering coding Bootcamp. No lie: I am tired every single evening... exhausted. Spending 8 hours of every day monday through Friday (and then all weekend) moving between learning new concepts, libraries, and techniques, and then applying them in almost daily coding projects and/or exercises is downright grueling. Add to that the lack of a social life and no real free time for friends or family. This is hard.... damn hard. For the past few days I've been at my breaking point. I am struggling just to manage all the new knowledge rattling around in my head while learning the next new thing. This time, it's ReactJS, which I simply LOVE learning -- and also I am tired. Keep moving soldier. There are no breaks here... just more to learn and love. I love this work. I'm in this for the long haul. On we go...", "We started learning Facebook's React JS just over 1 week ago. At the same time, we're learning how to use Webpack, Sass, Babel, and app hosting via git to Heroku. But back to React...", "I like the way React breaks things down into components. If you don't think in terms of single function components, you can quickly get into a complicated mess with React's props and state objects, which work best in a functional programming paradigm. It becomes necessary to examine where information should flow from and what user actions or other events should trigger updates to the view, and how. It's no longer simply an exercise in creating a button here and an input field there, and then creating a few little functions to tie them together and make things happen on a page. It requires more organization of thought... and planning how information should flow throughout the app. Come to think of it: It's a change in thinking from thinking in websites to thinking in apps.", "While I am sure I'll feel more confident in developing using React, right now I have to think and rethink how various components link together, and how to get information and user interaction to flow as needed in the most efficient, functional, and maintainable way as possible. I love this!", "Now I can't wait to learn how to connect to an external data source (DB, API, etc) and make that data React!" ],
+    "entryDate" : "2016-11-05T10:10:47-07:00",
+    "tags" : [ "Programming", "Software Development", "Web Development", "Front End Development", "Women in Tech" ],
+    "title" : "Six weeks in and all I want to do is keep learning..."
+  }, {
+    "article" : [ "So the first 2 weeks were wonderful. I am in a class/cohort with 9 fun, engaging peers who are all eager to learn javascript. I’ve learned a few awesome things every single day. And now we’re in our third week.", "Week three is where my mind is being blown. Every. Single. Day.", "I’ve learned some basic javascript before (codeacademy, freecodecamp, teamtreehouse, and a little back in college). I’ve heard programmers before mention things like 'callbacks', 'promises', and other terms before, but never having used them, I didn’t have the foggiest.", "Sean (our awesome instructor) has blown my mind. Even while using them in our latest assignment, a simple calculator, I am barely able to wrap my head around callbacks enough to write the code.", "Today we’re covering Test-Driven Development, and the basic underlying code behind the most popular TDD testing frameworks, Jasmine Mocha, and, Chai. While I’ve encountered Jasmine before in coding meetups about TDD, I really haven’t understood enough about about how they actually work before. Now I feel like I understand a wee bit better.", "Have I mentioned how much I love my team and cohort instructor? They are all pretty amazing people, and we work very well together too. Today we divided into two sub-groups and continued to work on a group portfolio page layout, using git tools that make working as individuals on teams and across teams so much easier. Github makes it so easy to communicate what we’re doing and to share our code changes and documentation (commit messages, etc) with the entire team.", "Tomorrow is Friday, and we celebrate by having each of us present for 5–10 minutes on something we’ve learned during the week, or something technical and related to what we’re learning in order to share our thoughts and lessons learned with the entire cohort. I may present on a website I did for a local coffee shop (Jitterbug Coffee Hop)… or else I’ll present more about tools that we use to make working on code a bit easier… like Unix commands, aliases, and functions I use… Helpful features of Bash and ZSH that I find most helpful… and a couple of very nice Atom packages (for Atom code editor.", "Thanks again for reading! Until next time…", "~Joni" ],
+    "entryDate" : "2016-10-13T09:03:47-07:00",
+    "tags" : [ "Programming", "Software Development", "Web Development", "Front End Development", "Women in Tech" ],
+    "title" : "Coding Boot-camp — Week 3"
+  }, {
+    "article" : [ "I thought I knew HTML and CSS pretty well. I thought this part of coding bootcamp would be sort of a cakewalk. Okay so I know some stuff, but I now realize that my rate of learning pure CSS3 slowed dramatically when I started using CSS frameworks and libraries (Bootstrap, Foundation, Angular, etc).", "Yesterday we were formally introduced to the Flex Box model. Oh my god! This is SO AWESOME!. As a team, we mob programed the base layout for a new group project using flexbox. Not only were we learning some of the pros and cons of some mob programming methods, but we learned a bit of how powerful (and sometimes confusing) using flexbox can be.", "I went home feeling that, wow — this is why I am here. This is damned good training for someone like me. Yes, I am comfortable at the Mac/UNIX command line. I am comfortable in using coding editors (and learning new ones — and customizing them). I’m fairly comfortable with git and github. And I am fairly comfortable with BASIC HTML5 and CSS3, and how to find good documentation on elements of both that I haven’t used before (or haven’t used in some new way before). What is great about this training (for me) is that I am getting more experience in working with others, getting and giving help from/to one another, and working on code as a team.", "Along the way I am learning some excellent practices that I am incorporating into my own workflow. Our instructor, Sean, has presented to us some great methods for approaching a project in a mindful, thoughtful, organized, and methodical way. His approach has me becoming ever so mindful of specific ways I can improve my own practices.", "That’s what bootcamp is for me this week. I can’t wait to get to work on the day. Ttyl…", "~Joni" ],
+    "entryDate" : "2016-10-07T20:30:47-07:00",
+    "tags" : [ "Women in Tech", "Learning to Code", "Codingbootcamp", "Web Development" ],
+    "title" : "Friday #2 at coding bootcamp. Already??"
+  }, {
+    "article" : [ "I was pretty nervous about this. I mean, I just quit my job for this awesome opportunity to go through a 12-week intensive front end development boot camp. Pretty awesome… but being without an income for 3 months is pretty scary.", "Now that my first week is complete, I can say that this is where I belong, and I am so optimistic about where my present path is taking me. I can also see that the work I’ve put in on my own, by attending local meet ups and taking online courses with TeamTreeHouse, CodeAcademy, Lynda.com, SafariBooksOnline, and FreeCodeCamp over the past year and a half is paying off!", "So… aside from enjoying my first week: What did I learn? Well… a lot of little things here and there, and some major things as well. This first week we focused on HTML, CSS, and getting familiar with the command line, git and github… all things I’ve been familiar with and have been working with for a while now. But we’ve also been learning to help one another, collaborate, try Mob Programming (awesome btw), and (most importantly) to push ourselves more… to try — fail — try — succeed, and to keep working at understanding all the things!", "I actually thought I knew enough html and css that this first week would not be challenging enough for me. I was wrong. I learned a lot… a lot of little things… and some huge new things as well. Positioning challenges without using flex-box or javascript, exploring pseudoclasses and just what clear-fix algorithm’s do. I learned some of those things and other stuff too.", "I can’t wait for tomorrow (Monday). I can’t wait to learn more… to DO more.", "~J" ],
+    "entryDate" : "2016-10-02T17:09:47-07:00",
+    "tags" : [ "Web Development", "Programming", "Women in Tech" ],
+    "title" : "Ready for Week 2 — Joni’s Code Camp Chronicles…"
+  } ],
+  "locations" : [ {
+    "address" : "2243 E 4500 S",
+    "city" : "Holladay",
+    "name" : "LotusMind Studio",
+    "state" : "Utah",
+    "suite" : "310",
+    "zip" : "84117"
+  }, {
+    "address" : "717 S 300 W",
+    "city" : "Salt Lake City",
+    "name" : "Pride Massage",
+    "state" : "Utah",
+    "suite" : "D",
+    "zip" : "84111"
+  } ],
+  "schedule" : [ {
+    "bookedBy" : "Joni",
+    "client" : "Sean Connery",
+    "date" : "2012-12-13T17:00:00-07:00",
+    "duration" : "120",
+    "isOutcall" : false,
+    "key" : "0",
+    "location" : "LotusMind Studio",
+    "note" : "Trigger finger is over-used. ",
+    "phone" : "212-222-2222",
+    "therapist" : "Joni"
+  }, {
+    "bookedBy" : "Joni",
+    "client" : "Brenda",
+    "date" : "2016-12-11T10:00:00-07:00",
+    "duration" : 90,
+    "isOutcall" : false,
+    "key" : "1",
+    "location" : "LotusMind Studio",
+    "note" : "Some note",
+    "phone" : "801-555-1212",
+    "therapist" : "Joni"
+  }, {
+    "bookedBy" : "Joni",
+    "client" : "Brenda",
+    "date" : "2016-12-11T13:00:00-07:00",
+    "duration" : 90,
+    "isOutcall" : false,
+    "key" : "2",
+    "location" : "LotusMind Studio",
+    "note" : "Some note",
+    "phone" : "801-555-1212",
+    "therapist" : "Joni"
+  }, {
+    "bookedBy" : "Joni",
+    "client" : "Brenda",
+    "date" : "2016-12-12T11:00:00-07:00",
+    "duration" : 90,
+    "isOutcall" : false,
+    "key" : "3",
+    "location" : "LotusMind Studio",
+    "note" : "Some note",
+    "phone" : "801-555-1212",
+    "therapist" : "Joni"
+  }, {
+    "bookedBy" : "Joni",
+    "client" : "Brenda",
+    "date" : "2016-12-12T14:00:00-07:00",
+    "duration" : 90,
+    "isOutcall" : false,
+    "key" : "4",
+    "location" : "LotusMind Studio",
+    "note" : "Some note",
+    "phone" : "801-555-1212",
+    "therapist" : "Joni"
+  }, {
+    "bookedBy" : "Joni",
+    "client" : "Brenda",
+    "date" : "2016-12-13T09:00:00-07:00",
+    "duration" : 90,
+    "isOutcall" : false,
+    "key" : "5",
+    "location" : "LotusMind Studio",
+    "note" : "Some note",
+    "phone" : "801-555-1212",
+    "therapist" : "Joni"
+  }, {
+    "bookedBy" : "Joni",
+    "client" : "Brenda",
+    "date" : "2016-12-13T13:00:00-07:00",
+    "duration" : 90,
+    "isOutcall" : false,
+    "key" : "6",
+    "location" : "LotusMind Studio",
+    "note" : "Some note",
+    "phone" : "801-555-1212",
+    "therapist" : "Joni"
+  }, {
+    "bookedBy" : "Joni",
+    "client" : "Larry",
+    "date" : "2016-12-13T13:30:00-07:00",
+    "duration" : 90,
+    "isOutcall" : false,
+    "key" : "21",
+    "location" : "LotusMind Studio",
+    "note" : "Some notes",
+    "phone" : "801-444-5555",
+    "therapist" : "Joni"
+  }, {
+    "bookedBy" : "Joni",
+    "client" : "Sean Connery",
+    "date" : "2016-12-13T17:00:00-07:00",
+    "duration" : "120",
+    "isOutcall" : false,
+    "key" : "7",
+    "location" : "LotusMind Studio",
+    "note" : "Trigger finger is over-used. ",
+    "phone" : "212-222-2222",
+    "therapist" : "Joni"
+  }, {
+    "bookedBy" : "Joni",
+    "client" : "Brenda",
+    "date" : "2016-12-14T08:00:00-07:00",
+    "duration" : 90,
+    "isOutcall" : false,
+    "key" : "8",
+    "location" : "LotusMind Studio",
+    "note" : "Some note",
+    "phone" : "801-555-1212",
+    "therapist" : "Joni"
+  }, {
+    "bookedBy" : "Joni",
+    "client" : "Brenda",
+    "date" : "2016-12-14T11:00:00-07:00",
+    "duration" : 90,
+    "isOutcall" : false,
+    "key" : "9",
+    "location" : "LotusMind Studio",
+    "note" : "Some note",
+    "phone" : "801-555-1212",
+    "therapist" : "Joni"
+  }, {
+    "bookedBy" : "Joni",
+    "client" : "Tony",
+    "date" : "2016-12-15T13:00:00-07:00",
+    "duration" : 90,
+    "isOutcall" : false,
+    "key" : "10",
+    "location" : "LotusMind Studio",
+    "note" : "Some note",
+    "phone" : "801-555-1212",
+    "therapist" : "Joni"
+  }, {
+    "bookedBy" : "Joni",
+    "client" : "Steve",
+    "date" : "2016-12-15T15:00:00-07:00",
+    "duration" : 90,
+    "isOutcall" : false,
+    "key" : "11",
+    "location" : "LotusMind Studio",
+    "note" : "Some note",
+    "phone" : "801-555-1212",
+    "therapist" : "Joni"
+  }, {
+    "bookedBy" : "Joni",
+    "client" : "Ben",
+    "date" : "2016-12-16T13:00:00-07:00",
+    "duration" : 90,
+    "isOutcall" : false,
+    "key" : "12",
+    "location" : "LotusMind Studio",
+    "note" : "Some note",
+    "phone" : "801-555-1212",
+    "therapist" : "Joni"
+  }, {
+    "bookedBy" : "Joni",
+    "client" : "Karin",
+    "date" : "2016-12-16T14:30:00-07:00",
+    "duration" : 90,
+    "isOutcall" : false,
+    "key" : "13",
+    "location" : "LotusMind Studio",
+    "note" : "Some note",
+    "phone" : "801-333-4444",
+    "therapist" : "Joni"
+  }, {
+    "bookedBy" : "Joni",
+    "client" : "Bree",
+    "date" : "2016-12-16T15:00:00-07:00",
+    "duration" : 90,
+    "isOutcall" : false,
+    "key" : "14",
+    "location" : "LotusMind Studio",
+    "note" : "Some note",
+    "phone" : "801-555-1212",
+    "therapist" : "Joni"
+  }, {
+    "bookedBy" : "Joni",
+    "client" : "William",
+    "date" : "2017-01-07T10:00:00-07:00",
+    "duration" : 90,
+    "isOutcall" : false,
+    "key" : "15",
+    "location" : "LotusMind Studio",
+    "note" : "Some note",
+    "phone" : "801-555-1212",
+    "therapist" : "Joni"
+  }, {
+    "bookedBy" : "Joni",
+    "client" : "William",
+    "date" : "2017-01-07T10:00:00-07:00",
+    "duration" : 90,
+    "isOutcall" : false,
+    "key" : "16",
+    "location" : "LotusMind Studio",
+    "note" : "Some note",
+    "phone" : "801-555-1212",
+    "therapist" : "Joni"
+  }, {
+    "bookedBy" : "Joni",
+    "client" : "Janet",
+    "date" : "2017-01-07T13:00:00-07:00",
+    "duration" : 90,
+    "isOutcall" : false,
+    "key" : "17",
+    "location" : "LotusMind Studio",
+    "note" : "Some note",
+    "phone" : "801-555-1212",
+    "therapist" : "Joni"
+  }, {
+    "bookedBy" : "Joni",
+    "client" : "Anne",
+    "date" : "2017-01-09T12:00:00-07:00",
+    "duration" : 90,
+    "isOutcall" : false,
+    "key" : "18",
+    "location" : "LotusMind Studio",
+    "note" : "Some note",
+    "phone" : "801-555-1212",
+    "therapist" : "Joni"
+  }, {
+    "bookedBy" : "Joni",
+    "client" : "Mike",
+    "date" : "2017-01-31T11:30:00-07:00",
+    "duration" : "90",
+    "isOutcall" : false,
+    "key" : "19",
+    "location" : "LotusMind Studio",
+    "note" : "This is a bogus appointment.",
+    "phone" : "801-742-9999",
+    "therapist" : "Joni"
+  }, {
+    "bookedBy" : "Joni",
+    "client" : "Sean Connery",
+    "date" : "Invalid date",
+    "duration" : "120",
+    "isOutcall" : false,
+    "key" : "20",
+    "location" : "LotusMind Studio",
+    "note" : "Trigger finger is over-used. ",
+    "phone" : "212-222-2222",
+    "therapist" : "Joni"
+  }, {
+    "bookedBy" : "Joni",
+    "client" : "Bobby Tables",
+    "date" : "2016-12-13T09:00:00-07:00",
+    "duration" : 90,
+    "isOutcall" : false,
+    "location" : "LotusMind Studio",
+    "note" : "Notes",
+    "phone" : "801-444-3333",
+    "therapist" : "Joni"
+  } ],
+  "services" : [ {
+    "duration" : 60,
+    "locationType" : "incall",
+    "price" : 60,
+    "serviceName" : "1 Hour Massage",
+    "serviceType" : "massage"
+  }, {
+    "duration" : 60,
+    "locationType" : "outcall",
+    "price" : 90,
+    "serviceName" : "1 Hour Massage",
+    "serviceType" : "massage"
+  }, {
+    "duration" : 90,
+    "locationType" : "incall",
+    "price" : 90,
+    "serviceName" : "90 Minute Massage",
+    "serviceType" : "massage"
+  }, {
+    "duration" : 90,
+    "locationType" : "outcall",
+    "price" : 135,
+    "serviceName" : "90 Minute Massage",
+    "serviceType" : "massage"
+  }, {
+    "duration" : 120,
+    "locationType" : "incall",
+    "price" : 120,
+    "serviceName" : "2 Hour Massage",
+    "serviceType" : "massage"
+  }, {
+    "duration" : 120,
+    "locationType" : "outcall",
+    "price" : 180,
+    "serviceName" : "2 Hour Massage",
+    "serviceType" : "massage"
+  } ],
+  "therapistDetail" : {
+    "email" : "me@gracehopper.com",
+    "name" : {
+      "first" : "Grace",
+      "last" : "Hopper"
+    },
+    "phone" : "415-555-1212"
+  },
+  "users" : [ {
+    "address" : {
+      "city" : "Salt Lake City",
+      "state" : "UT",
+      "street1" : "559 N 200 W",
+      "street2" : "",
+      "zip" : "84103"
+    },
+    "discount" : "none",
+    "doNotBook" : false,
+    "emails" : {
+      "office" : "me@joniweiss.com"
+    },
+    "emergencyContact" : {
+      "name" : "Jane Preece",
+      "phone" : "801-910-3636",
+      "relationship" : "sister"
+    },
+    "gender" : "female",
+    "imageUrl" : "",
+    "isAdmin" : true,
+    "isClient" : true,
+    "isTherapist" : true,
+    "isrepeat" : true,
+    "name" : {
+      "first" : "Joni",
+      "last" : "Weiss"
+    },
+    "notes" : "This is a note",
+    "phones" : {
+      "mobile" : "801-884-7450"
+    },
+    "prefs" : {
+      "allergies" : "none",
+      "isLotionOK" : true,
+      "isOilOK" : true,
+      "musicPrefs" : "anything but enya",
+      "note" : "This is a note"
+    }
+  } ]
+}

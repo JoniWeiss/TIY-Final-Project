@@ -15,6 +15,9 @@ export default class Header extends React.Component {
     // Navigation menu responsiveness
     // for small screens
     $(document).ready(function() {
+      if($('.menu').is(":visible")) {
+        $('.menu-items').slideUp(0);
+      }
       $('.menu').click(function(){
         $('.menu-items').slideDown(400, function(){
           $(this).click(function() {
@@ -25,9 +28,9 @@ export default class Header extends React.Component {
     });
     $(window).resize(function() {
       var windowsize = $(window).width();
-      if (windowsize > 480) {
+      if (windowsize > 850) {
         $(".menu-items").css("display","inline-block");
-      } else if (windowsize <= 480) {
+      } else if (windowsize <= 850) {
         $(".menu-items").css("display","none");
       }
     });﻿
@@ -35,31 +38,31 @@ export default class Header extends React.Component {
       <header className="nav-bar">
         <nav className="nav-menu">
           <div id="logo">
-            <span className="menu"><i className="fa fa-bars" aria-hidden="true"></i></span>
+            <span className="menu"><i className="fa fa-bars fa-2x" aria-hidden="true"></i></span>
             <Link to='/'>
               <img src={require("../images/purple-lotus-flower.png")} alt="logo" />
             </Link>
           </div>
           <div className="menu-items">
             <ul>
-              <li><Link to='/'>Home</Link></li>
-              <li><Link to='/services'>Services</Link></li>
+              <li className="navList"><Link to='/'>Home</Link></li>
+              <li className="navList"><Link to='/services'>Services</Link></li>
               {/***Schedule***/}
               {isAuthed
                 ? <span>
-                    <li>
+                    <li className="navList">
                       <Link to="/schedule">Therapist Schedule
                       </Link>
                     </li>
                   </span>
                 : <span></span>
               }
-              <li><Link to='/about'>About</Link></li>
-              <li><Link to='/contact-us'>Contact Us</Link></li>
-              <li><Link to='/blog'>Blog</Link></li>
+              <li className="navList"><Link to='/about'>About</Link></li>
+              <li className="navList"><Link to='/contact-us'>Contact Us</Link></li>
+              <li className="navList"><Link to='/blog'>Blog</Link></li>
               {isAuthed
                 ? <span>
-                    <li>
+                    <li className="navList">
                       <a href="/" onClick={logout}>
                         Log Out
                       </a>
@@ -68,7 +71,7 @@ export default class Header extends React.Component {
                 : <span>
                     <li
                       className={
-                        classnames("navItem", {
+                        classnames("navItem navList", {
                           hide: isAuthed
                         })
                       }>
@@ -77,7 +80,7 @@ export default class Header extends React.Component {
                     </li>
                     <li
                       className={
-                        classnames("navItem", {
+                        classnames("navItem navList", {
                           hide: isAuthed
                         })
                       }>
