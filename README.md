@@ -33,6 +33,7 @@ Also used Tyler McGinnis' Firebase-React NPM package called ReBase. Find it here
 
 ## Contributors
 Joni Weiss
+Tyler McGinnis (Author, Re-Base)
 
 
 ## License
