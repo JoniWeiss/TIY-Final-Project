@@ -1,7 +1,9 @@
 # My Awesome Therapist -- The App
 
 ## Synopsis
-My Therapist App is designed with the independent therapist and their practice in mind. The app will include views for the therapist (authorization required), for clients (authorization required), and for the public (non-authenticated users). My vision for this app comes from a desire to see better and wholistic web site, scheduling, blogging, and client management options that are accessible to the independent Licensed Massage Therapist. While My Awesome Therapist is designed with Massage Therapists in mind, it can quite easily be modified for other therapists.  
+My Therapist App is designed with the independent therapist and their practice in mind. The app will include views for the therapist (authorization required), for clients (authorization required), and for the public (non-authenticated users). 
+
+My vision for this app comes from a desire to see better and wholistic web site, scheduling, blogging, and client management options that are accessible to the independent Licensed Massage Therapist. While My Awesome Therapist is designed with Massage Therapists in mind, it can quite easily be modified for other therapists.  
 
 
 ## Motivation
