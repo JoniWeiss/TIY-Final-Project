@@ -23,6 +23,8 @@ My final stack included:
 * Sass
 * webpack
 
+Also used Tyler McGinnis' Firebase-React NPM package called ReBase. Find it here on GitHub. Shout out to Tyler for helping me get past an initial (user error on my part) glich! :)
+
 
 ## Data Model for App
 (created in MindNode)
