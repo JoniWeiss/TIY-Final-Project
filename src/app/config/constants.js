@@ -6,7 +6,7 @@ export const base = Rebase.createClass({
     authDomain: "mytherapistapp.firebaseapp.com",
     databaseURL: "https://mytherapistapp.firebaseio.com",
     storageBucket: "mytherapistapp.appspot.com",
-},)
+})
 
 // Initialize Firebase
   // var config = {

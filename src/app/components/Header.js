@@ -40,7 +40,7 @@ export default class Header extends React.Component {
           <div id="logo">
             <span className="menu"><i className="fa fa-bars fa-2x" aria-hidden="true"></i></span>
             <Link to='/'>
-              <img src={require("../images/purple-lotus-flower.png")} alt="logo" />
+              <img src={require("../images/purple-lotus-flower.png")} alt="Logo and link to Application Home." />
             </Link>
           </div>
           <div className="menu-items">
@@ -57,7 +57,7 @@ export default class Header extends React.Component {
                   </span>
                 : <span></span>
               }
-              <li className="navList"><Link to='/about'>About</Link></li>
+              <li className="navList"><Link to='/about'>About Us</Link></li>
               <li className="navList"><Link to='/contact-us'>Contact Us</Link></li>
               <li className="navList"><Link to='/blog'>Blog</Link></li>
               {isAuthed

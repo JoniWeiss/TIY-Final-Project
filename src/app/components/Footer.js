@@ -8,7 +8,7 @@ export default class Footer extends React.Component {
         </div>
         <div className="footerCenter">
           <p>
-            <a  href="//www.linkedin.com/in/joniweiss?trk=hp-identity-name"
+            <a  href="//www.linkedin.com/in/joniweiss?trk=hp-identity-name" alt="Link to LinkedIn Profile." aria-label="Link to LinkedIn Profile."
               data-size="large" target="_blank">
               <i className="fa fa-linkedin-square fa-2x"
               aria-hidden="true"></i>&nbsp;&nbsp;
@@ -16,7 +16,7 @@ export default class Footer extends React.Component {
           </p>
 
           <p>
-            <a href="//twitter.com/joniw"
+            <a href="//twitter.com/joniw" alt="Link to Twitter Profile." aria-label="Link to Twitter Profile."
               data-size="large" target="_blank">
               <i className="fa fa-twitter-square fa-2x"
               aria-hidden="true"></i>&nbsp;&nbsp;
@@ -24,7 +24,7 @@ export default class Footer extends React.Component {
           </p>
 
           <p>
-            <a href="//github.com/JoniWeiss"
+            <a href="//github.com/JoniWeiss" alt="Link to GitHub Profile." aria-label="Link to GitHub Profile."
               data-size="large" target="_blank">
               <i className="fa fa-github fa-2x"
               aria-hidden="true"></i>&nbsp;&nbsp;

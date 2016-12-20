@@ -28273,7 +28273,7 @@
 	                _react2.default.createElement(
 	                  _reactRouter.Link,
 	                  { to: '/about' },
-	                  'About'
+	                  'About Us'
 	                )
 	              ),
 	              _react2.default.createElement(
@@ -39097,7 +39097,7 @@
 	            null,
 	            _react2.default.createElement(
 	              "a",
-	              { href: "//www.linkedin.com/in/joniweiss?trk=hp-identity-name",
+	              { href: "//www.linkedin.com/in/joniweiss?trk=hp-identity-name", alt: "Link to LinkedIn Profile.", "aria-label": "Link to LinkedIn Profile.",
 	                "data-size": "large", target: "_blank" },
 	              _react2.default.createElement("i", { className: "fa fa-linkedin-square fa-2x",
 	                "aria-hidden": "true" }),
@@ -39109,7 +39109,7 @@
 	            null,
 	            _react2.default.createElement(
 	              "a",
-	              { href: "//twitter.com/joniw",
+	              { href: "//twitter.com/joniw", alt: "Link to Twitter Profile.", "aria-label": "Link to Twitter Profile.",
 	                "data-size": "large", target: "_blank" },
 	              _react2.default.createElement("i", { className: "fa fa-twitter-square fa-2x",
 	                "aria-hidden": "true" }),
@@ -39121,7 +39121,7 @@
 	            null,
 	            _react2.default.createElement(
 	              "a",
-	              { href: "//github.com/JoniWeiss",
+	              { href: "//github.com/JoniWeiss", alt: "Link to GitHub Profile.", "aria-label": "Link to GitHub Profile.",
 	                "data-size": "large", target: "_blank" },
 	              _react2.default.createElement("i", { className: "fa fa-github fa-2x",
 	                "aria-hidden": "true" }),
@@ -39270,37 +39270,7 @@
 	          { id: 'appTitle', className: 'textOutline' },
 	          'My Awesome Therapist'
 	        ),
-	        _react2.default.createElement('img', { id: 'qrCode', src: __webpack_require__(/*! ../images/qr-code.png */ 241) }),
-	        _react2.default.createElement(
-	          'div',
-	          { id: 'demoInfo' },
-	          _react2.default.createElement(
-	            'h2',
-	            null,
-	            'Try The Demo!'
-	          ),
-	          _react2.default.createElement(
-	            'p',
-	            null,
-	            'Scan the QR Code (above) on your mobile device.'
-	          ),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(
-	            'p',
-	            null,
-	            'Log in to try the therapists\' scheduler:'
-	          ),
-	          _react2.default.createElement(
-	            'p',
-	            null,
-	            'Login: admin@demo.com'
-	          ),
-	          _react2.default.createElement(
-	            'p',
-	            null,
-	            'Password: admin123'
-	          )
-	        )
+	        _react2.default.createElement('img', { id: 'qrCode', alt: 'QR Scan Code.', src: __webpack_require__(/*! ../images/qr-code.png */ 241) })
 	      );
 	    }
 	  }]);
@@ -39351,7 +39321,7 @@
 	
 	
 	// module
-	exports.push([module.id, "#frontImage {\n  background: url(" + __webpack_require__(/*! ../images/front-image.png */ 240) + ");\n  background-position: center center;\n  background-size: cover;\n  width: 100vw;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center; }\n  #frontImage #appTitle {\n    text-transform: uppercase;\n    font-weight: lighter;\n    letter-spacing: 2px;\n    width: 100vw;\n    font-size: 3em;\n    color: #E7FFC2;\n    text-align: center; }\n  #frontImage #qrCode {\n    width: 200px;\n    height: auto;\n    margin: 2em; }\n  #frontImage #demoInfo {\n    background-color: #DAC2FF;\n    border: 2px solid black;\n    border-radius: 5px;\n    text-align: center;\n    padding: 0 1em 1em 1em; }\n\n.textOutline {\n  color: #EDF7DE;\n  text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue; }\n", ""]);
+	exports.push([module.id, "#frontImage {\n  background: url(" + __webpack_require__(/*! ../images/front-image.png */ 240) + ");\n  background-position: center center;\n  background-size: cover;\n  width: 100vw;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center; }\n  #frontImage #appTitle {\n    text-transform: uppercase;\n    font-weight: bolder;\n    letter-spacing: 2px;\n    width: 100vw;\n    font-size: 3em;\n    color: #000;\n    text-align: center; }\n  #frontImage #qrCode {\n    width: 200px;\n    height: auto;\n    margin: 3.5em; }\n  #frontImage #demoInfo {\n    background-color: #DAC2FF;\n    border: 2px solid black;\n    border-radius: 5px;\n    text-align: center;\n    padding: 0 1em 1em 1em; }\n", ""]);
 	
 	// exports
 
@@ -80700,7 +80670,7 @@
 	
 	
 	// module
-	exports.push([module.id, "#frontImage {\n  background: url(" + __webpack_require__(/*! ../images/front-image.png */ 240) + ");\n  background-position: center center;\n  background-size: cover;\n  width: 100vw;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center; }\n  #frontImage #appTitle {\n    text-transform: uppercase;\n    font-weight: lighter;\n    letter-spacing: 2px;\n    width: 100vw;\n    font-size: 3em;\n    color: #E7FFC2;\n    text-align: center; }\n  #frontImage #qrCode {\n    width: 200px;\n    height: auto;\n    margin: 2em; }\n  #frontImage #demoInfo {\n    background-color: #DAC2FF;\n    border: 2px solid black;\n    border-radius: 5px;\n    text-align: center;\n    padding: 0 1em 1em 1em; }\n\n.textOutline {\n  color: #EDF7DE;\n  text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue; }\n\nform input, form textArea, form button, form select {\n  font-size: 1.25em; }\n\ntr {\n  text-align: left; }\n\ntd {\n  padding-left: .5em;\n  padding-right: .5em; }\n\n.content-main {\n  padding: 1em;\n  flex-basis: 70%; }\n\n.content {\n  background-color: rgba(181, 201, 149, 0.1);\n  display: flex;\n  flex-direction: row;\n  align-items: stretch;\n  min-height: 90vh; }\n\n.mainContent {\n  padding: 2em;\n  min-height: 90vh; }\n  .mainContent li {\n    margin-left: 1em; }\n\n.entry-title {\n  padding-bottom: .25em; }\n\n.entry-article {\n  text-align: justify; }\n\nheader {\n  display: flex;\n  flex-wrap: nowrap;\n  justify-content: space-between;\n  align-items: center; }\n\n.nav-bar {\n  height: 5vh; }\n\n.nav-menu {\n  font-family: \"Ubuntu\", sans-serif;\n  background-color: black;\n  display: flex;\n  flex-wrap: nowrap;\n  justify-content: flex-start;\n  align-items: center;\n  color: white;\n  position: fixed;\n  top: 0;\n  width: 100vw;\n  text-align: left;\n  padding: 0 20px;\n  z-index: 10; }\n  .nav-menu #logo {\n    margin-right: 1em; }\n    .nav-menu #logo img {\n      background-color: white;\n      display: flex;\n      justify-content: flex-start;\n      align-self: center;\n      border: 2px solid rebeccapurple;\n      border-radius: 50%;\n      height: 4vh;\n      width: auto;\n      margin: .25em;\n      padding: .25em;\n      text-align: center;\n      z-index: -1; }\n  .nav-menu .menu {\n    display: none; }\n  .nav-menu .menu-items {\n    display: inline-block; }\n    .nav-menu .menu-items ul {\n      background-color: black;\n      align-self: flex-start;\n      white-space: nowrap;\n      margin: 0; }\n    .nav-menu .menu-items .navList {\n      list-style: none;\n      display: inline-block;\n      border-left: 1px solid #b6c999;\n      padding: 1em 1.5em; }\n      .nav-menu .menu-items .navList a:link,\n      .nav-menu .menu-items .navList a:visited {\n        color: #b6c999;\n        font-weight: bold;\n        text-decoration: none; }\n    .nav-menu .menu-items li:last-child {\n      border-right: 1px solid #b6c999; }\n\n@media screen and (max-width: 850px) {\n  .nav-menu {\n    display: inline-block;\n    padding: 0; }\n    .nav-menu #logo {\n      display: flex;\n      flex-direction: row;\n      justify-content: flex-start; }\n    .nav-menu .menu {\n      background-color: black;\n      width: 100vw;\n      display: block;\n      padding: 1em .5em 1em .5em;\n      color: #b6c999;\n      font-weight: bold;\n      position: relative;\n      outline: 0;\n      transition: opacity .2s ease-in-out; }\n      .nav-menu .menu hover {\n        opacity: 0.6; }\n    .nav-menu .menu-items {\n      display: flex;\n      flex-direction: row;\n      justify-content: flex-start;\n      width: 200px;\n      height: auto;\n      margin: 0 0 0 -6px;\n      padding: 0;\n      border-radius: 5px;\n      transition: visibility .5s;\n      z-index: 1; }\n      .nav-menu .menu-items ul {\n        width: 100vw; }\n        .nav-menu .menu-items ul .navList,\n        .nav-menu .menu-items ul .navItems {\n          display: flex;\n          padding: .5em;\n          border-bottom: 2px solid #b6c999; }\n          .nav-menu .menu-items ul .navList li:last-child,\n          .nav-menu .menu-items ul .navItems li:last-child {\n            border-bottom: none; }\n          .nav-menu .menu-items ul .navList li:hover,\n          .nav-menu .menu-items ul .navItems li:hover {\n            background-color: #222; } }\n\n.footer {\n  background-color: #9968FC;\n  min-height: 5vh;\n  text-align: center;\n  padding: .5em;\n  display: flex;\n  flex-direction: row;\n  flex-grow: 1;\n  justify-content: space-between; }\n  .footer .footerLeft,\n  .footer .footerCenter,\n  .footer .footerRight {\n    display: flex;\n    flex-direction: row;\n    flex-wrap: nowrap;\n    justify-content: flex-start;\n    align-items: center; }\n    .footer .footerLeft a, .footer .footerLeft a:link, .footer .footerLeft a:visited,\n    .footer .footerCenter a,\n    .footer .footerCenter a:link,\n    .footer .footerCenter a:visited,\n    .footer .footerRight a,\n    .footer .footerRight a:link,\n    .footer .footerRight a:visited {\n      color: darkslategrey;\n      text-decoration: none;\n      cursor: auto; }\n\n.sidebar {\n  padding: 1em;\n  flex-basis: 30%; }\n\n* {\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0; }\n\nbody {\n  background-color: #eee;\n  display: flex;\n  flex-direction: column; }\n\nh1, h2, h3, h4 {\n  padding-top: 1em;\n  font-family: \"Ubuntu\", sans-serif; }\n\nh1, h2 {\n  text-align: center; }\n\np {\n  font-family: \"Roboto\", sans-serif;\n  font-size: 1.25em; }\n\n.centeredText {\n  text-align: center; }\n\n.hide {\n  display: none; }\n\n.flex {\n  display: flex;\n  flex-wrap: wrap;\n  flex-grow: 1;\n  justify-content: center;\n  border-radius: 2px; }\n\n.flexContent {\n  background-color: #f1f1f1;\n  align-items: center;\n  min-width: 250px;\n  flex: 1 1 0;\n  margin-left: 1.5em;\n  margin-right: 1.5em;\n  max-width: 304px;\n  display: flex;\n  flex-direction: column; }\n", ""]);
+	exports.push([module.id, "#frontImage {\n  background: url(" + __webpack_require__(/*! ../images/front-image.png */ 240) + ");\n  background-position: center center;\n  background-size: cover;\n  width: 100vw;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center; }\n  #frontImage #appTitle {\n    text-transform: uppercase;\n    font-weight: bolder;\n    letter-spacing: 2px;\n    width: 100vw;\n    font-size: 3em;\n    color: #000;\n    text-align: center; }\n  #frontImage #qrCode {\n    width: 200px;\n    height: auto;\n    margin: 3.5em; }\n  #frontImage #demoInfo {\n    background-color: #DAC2FF;\n    border: 2px solid black;\n    border-radius: 5px;\n    text-align: center;\n    padding: 0 1em 1em 1em; }\n\nform input, form textArea, form button, form select {\n  font-size: 1.25em; }\n\ntr {\n  text-align: left; }\n\ntd {\n  padding-left: .5em;\n  padding-right: .5em; }\n\n.content-main {\n  padding: 1em;\n  flex-basis: 70%; }\n\n.content {\n  background-color: rgba(181, 201, 149, 0.1);\n  display: flex;\n  flex-direction: row;\n  align-items: stretch;\n  min-height: 90vh; }\n\n.mainContent {\n  padding: 2em;\n  min-height: 90vh; }\n  .mainContent li {\n    margin-left: 1em; }\n\n.entry-title {\n  padding-bottom: .25em; }\n\n.entry-article {\n  text-align: justify; }\n\nheader {\n  display: flex;\n  flex-wrap: nowrap;\n  justify-content: space-between;\n  align-items: center; }\n\n.nav-bar {\n  height: 5vh; }\n\n.nav-menu {\n  font-family: \"Ubuntu\", sans-serif;\n  background-color: black;\n  display: flex;\n  flex-wrap: nowrap;\n  justify-content: flex-start;\n  align-items: center;\n  color: white;\n  position: fixed;\n  top: 0;\n  width: 100vw;\n  text-align: left;\n  padding: 0 20px;\n  z-index: 10; }\n  .nav-menu #logo {\n    margin-right: 1em; }\n    .nav-menu #logo img {\n      background-color: white;\n      display: flex;\n      justify-content: flex-start;\n      align-self: center;\n      border: 2px solid rebeccapurple;\n      border-radius: 50%;\n      height: 4vh;\n      width: auto;\n      margin: .25em;\n      padding: .25em;\n      text-align: center;\n      z-index: -1; }\n  .nav-menu .menu {\n    display: none; }\n  .nav-menu .menu-items {\n    display: inline-block; }\n    .nav-menu .menu-items ul {\n      background-color: black;\n      align-self: flex-start;\n      white-space: nowrap;\n      margin: 0; }\n    .nav-menu .menu-items .navList {\n      list-style: none;\n      display: inline-block;\n      border-left: 1px solid #b6c999;\n      padding: 1em 1.5em; }\n      .nav-menu .menu-items .navList a:link,\n      .nav-menu .menu-items .navList a:visited {\n        color: #b6c999;\n        font-weight: bold;\n        text-decoration: none; }\n    .nav-menu .menu-items li:last-child {\n      border-right: 1px solid #b6c999; }\n\n@media screen and (max-width: 850px) {\n  .nav-menu {\n    display: inline-block;\n    padding: 0; }\n    .nav-menu #logo {\n      display: flex;\n      flex-direction: row;\n      justify-content: flex-start; }\n    .nav-menu .menu {\n      background-color: black;\n      width: 100vw;\n      display: block;\n      padding: 1em .5em 1em .5em;\n      color: #b6c999;\n      font-weight: bold;\n      position: relative;\n      outline: 0;\n      transition: opacity .2s ease-in-out; }\n      .nav-menu .menu hover {\n        opacity: 0.6; }\n    .nav-menu .menu-items {\n      display: flex;\n      flex-direction: row;\n      justify-content: flex-start;\n      width: 200px;\n      height: auto;\n      margin: 0 0 0 -6px;\n      padding: 0;\n      border-radius: 5px;\n      transition: visibility .5s;\n      z-index: 1; }\n      .nav-menu .menu-items ul {\n        width: 100vw; }\n        .nav-menu .menu-items ul .navList,\n        .nav-menu .menu-items ul .navItems {\n          display: flex;\n          padding: .5em;\n          border-bottom: 2px solid #b6c999; }\n          .nav-menu .menu-items ul .navList li:last-child,\n          .nav-menu .menu-items ul .navItems li:last-child {\n            border-bottom: none; }\n          .nav-menu .menu-items ul .navList li:hover,\n          .nav-menu .menu-items ul .navItems li:hover {\n            background-color: #222; } }\n\n.footer {\n  background-color: #9968FC;\n  min-height: 5vh;\n  text-align: center;\n  padding: .5em;\n  display: flex;\n  flex-direction: row;\n  flex-grow: 1;\n  justify-content: space-between; }\n  .footer .footerLeft,\n  .footer .footerCenter,\n  .footer .footerRight {\n    display: flex;\n    flex-direction: row;\n    flex-wrap: nowrap;\n    justify-content: flex-start;\n    align-items: center; }\n    .footer .footerLeft a, .footer .footerLeft a:link, .footer .footerLeft a:visited,\n    .footer .footerCenter a,\n    .footer .footerCenter a:link,\n    .footer .footerCenter a:visited,\n    .footer .footerRight a,\n    .footer .footerRight a:link,\n    .footer .footerRight a:visited {\n      color: #002323;\n      text-decoration: none;\n      cursor: auto; }\n\n.sidebar {\n  padding: 1em;\n  flex-basis: 30%; }\n\n* {\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0; }\n\nbody {\n  background-color: #eee;\n  display: flex;\n  flex-direction: column; }\n\nh1, h2, h3, h4 {\n  padding-top: 1em;\n  font-family: \"Ubuntu\", sans-serif; }\n\nh1, h2 {\n  text-align: center; }\n\np {\n  font-family: \"Roboto\", sans-serif;\n  font-size: 1.25em; }\n\n.centeredText {\n  text-align: center; }\n\n.hide {\n  display: none; }\n\n.flex {\n  display: flex;\n  flex-wrap: wrap;\n  flex-grow: 1;\n  justify-content: center;\n  border-radius: 2px; }\n\n.flexContent {\n  background-color: #f1f1f1;\n  align-items: center;\n  min-width: 250px;\n  flex: 1 1 0;\n  margin-left: 1.5em;\n  margin-right: 1.5em;\n  max-width: 304px;\n  display: flex;\n  flex-direction: column; }\n", ""]);
 	
 	// exports
 
