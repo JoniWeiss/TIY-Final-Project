@@ -87,22 +87,27 @@ handleAdd () {
         <h2>Add new appointment</h2>
         <br />
         <form id="newAppt">
-          <label>Appointment Date:<DateTimePicker tabIndex={1} defaultValue={new Date} step={15} format='MM/DD/YY hh:mm A' onChange={this.handleDateChange.bind(this)} /></label><br />
+          <label>Appointment Date:<DateTimePicker defaultValue={new Date} step={15} format='MM/DD/YY hh:mm A' onChange={this.handleDateChange.bind(this)} /></label><br />
 
-          <label>Select duration (default: 90)<select value={90} name="duration" tabIndex={2} onChange={this.handleDurationChange.bind(this)}>
+          <label>Select duration (default: 90)<select value={90} name="duration" onChange={this.handleDurationChange.bind(this)}>
             <option value="60">1 Hour</option>
             <option value="90">90 Minutes</option>
             <option value="120">2 Hours</option>
           </select></label><br /><br />
 
-          <label>Client name:<input name="name" type="text" placeholder="Client Name"tabIndex={3} onChange={this.handleNameChange.bind(this)} /></label><br /><br />
+          <label>Client name:<input name="name" type="text" placeholder="Client Name" onChange={this.handleNameChange.bind(this)} /></label><br /><br />
 
-          <label>Client phone:<input name="phone" type="text" placeholder="801-000-0000" tabIndex={4} onChange={this.handlePhoneChange.bind(this)} /></label><br /><br />
+          <label>Client phone:<input name="phone" type="text" placeholder="801-000-0000" onChange={this.handlePhoneChange.bind(this)} /></label><br /><br />
 
-          <label>Any notes (optional):<textArea name="note" type="textArea" placeholder="Notes..." tabIndex={5} onChange={this.handleNoteChange.bind(this)} /></label>
+          <label>Any notes (optional):<textArea name="note" type="textArea" placeholder="Notes..." onChange={this.handleNoteChange.bind(this)} /></label>
           <br /><br />
 
-          <button type="button" tabIndex={6} onClick={this.handleAdd.bind(this)}>Add</button>
+          <label>Click button to create appointment:
+            <br />
+            <button type="button" onClick={this.handleAdd.bind(this)}>
+              Add
+            </button>
+          </label>
         </form>
 
       </div>

@@ -28227,7 +28227,7 @@
 	            _react2.default.createElement(
 	              _reactRouter.Link,
 	              { to: '/' },
-	              _react2.default.createElement('img', { src: __webpack_require__(/*! ../images/purple-lotus-flower.png */ 234), alt: 'logo' })
+	              _react2.default.createElement('img', { src: __webpack_require__(/*! ../images/purple-lotus-flower.png */ 234), alt: 'Logo and link to Application Home.' })
 	            )
 	          ),
 	          _react2.default.createElement(
