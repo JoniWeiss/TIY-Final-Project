@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { BrowserRouter as Router, Redirect, browserHistory, Link, Match, Miss } from 'react-router'
+import { BrowserRouter, Match, Miss, Link } from 'react-router'
 import { base } from '../config/constants'
 
 import Header from './Header'
@@ -69,7 +69,7 @@ export default class App extends Component {
 
   render () {
     return (
-      <Router history={browserHistory}>
+      <BrowserRouter>
         <div className='container'>
           <Header
             isAuthed={this.state.isAuthed}
@@ -97,6 +97,7 @@ export default class App extends Component {
               />
             )}
           />
+
           <Match
             pattern='/schedule'
             render={defaultProps => (
@@ -116,7 +117,7 @@ export default class App extends Component {
           <Miss render={() => <h3>No Match</h3>} />
           <Footer />
         </div>
-      </Router>
+      </BrowserRouter>
     );
   }
 }

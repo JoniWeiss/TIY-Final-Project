@@ -65,8 +65,8 @@
     "type": "git",
     "url": "git+https://github.com/JoniWeiss-tiy/My-Awesome-Therapist-App.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Joni Weiss",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/JoniWeiss-tiy/My-Awesome-Therapist-App/issues"
   },

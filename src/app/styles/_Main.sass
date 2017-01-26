@@ -1,38 +1,36 @@
 @import _variables
 
+#contentArea
+    height: $content-height
+
+
 #frontImage
-  background: url(../images/front-image.png)
-  background-position: center center
-  background-size: cover
-  width: 100vw
-  height: $content-height
-  display: flex
-  flex-direction: column
-  justify-content: flex-start
-  align-items: center
+    background: url(../images/front-image.png)
+    background-position: center center
+    background-size: cover
+    filter: opacity(.3) hue-rotate(-90deg) blur(2px)
+    width: 100vw
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+    position: fixed
+    top: 2.5em
 
 
-  #appTitle
+#appTitle
     text-transform: uppercase
     font-weight: bolder
     letter-spacing: 2px
-    width: 100vw
-    font-size: 3em
-    color: #000
+    color: $primary-text-color
     text-align: center
+    font-size:  1.5em
 
-  #qrCode
-    width: 200px
-    height: auto
-    margin: 3.5em
+    .textOutline
+        color: #000
+        text-shadow: 1px 1px 2px white, 0 0 1em $primary-color-dark, 0 0 0.2em white
 
-  #demoInfo
-    background-color: #DAC2FF
-    border: 2px solid black
-    border-radius: 5px
+#appSubtitle
+    color: $primary-text-color
     text-align: center
-    padding: 0 1em 1em 1em
-
-// .textOutline
-//   color: #000
-//   text-shadow: 2px 2px 4px black, 0 0 2em black, 0 0 0.4em black
+    margin: 2em

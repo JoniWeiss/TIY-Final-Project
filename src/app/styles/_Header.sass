@@ -11,12 +11,12 @@ header
 
 .nav-menu
   font-family: $fonts-header
-  background-color: black
+  background-color: $primary-color-dark
   display: flex
   flex-wrap: nowrap
   justify-content: flex-start
   align-items: center
-  color: white
+  color: $primary-color-text
   position: fixed
   top: 0
   width: 100vw
@@ -28,11 +28,11 @@ header
     margin-right: 1em
 
     img
-      background-color: white
+      background-color: $primary-color-light
       display: flex
       justify-content: flex-start
       align-self: center
-      border: 2px solid rebeccapurple
+      border: 2px solid $accent-color
       border-radius: 50%
       height: $logo-height
       width: auto
@@ -49,7 +49,7 @@ header
     display: inline-block
 
     ul
-      background-color: black
+      background-color: $primary-color-dark
       align-self: flex-start
       white-space: nowrap
       margin: 0
@@ -57,18 +57,18 @@ header
     .navList
       list-style: none
       display: inline-block
-      border-left: 1px solid #b6c999
+      border-left: 1px solid $divider-color
       padding: 1em 1.5em
 
 
       a:link,
       a:visited
-        color: #b6c999
+        color: $primary-color-text
         font-weight: bold
         text-decoration: none
 
     li:last-child
-      border-right: 1px solid #b6c999
+      border-right: 1px solid $divider-color
 
 @media screen and (max-width: 850px)
   .nav-menu
@@ -81,11 +81,11 @@ header
       justify-content: flex-start
 
     .menu
-      background-color: black
+      background-color: $primary-color-dark
       width: 100vw
       display: block
       padding: 1em .5em 1em .5em
-      color: #b6c999
+      color: $primary-color-text
       font-weight: bold
       position: relative
       outline: 0
@@ -114,10 +114,10 @@ header
         .navItems
           display: flex
           padding: .5em
-          border-bottom: 2px solid #b6c999
+          border-bottom: 2px solid $accent-color
 
           li:last-child
             border-bottom: none
 
           li:hover
-            background-color: #222
+            background-color: $secondary-text-color
