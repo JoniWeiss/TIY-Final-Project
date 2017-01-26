@@ -13,12 +13,10 @@ export default class Main extends React.Component {
           <p>
               Final Project for Front End Engineering immersive 
               Coding Bootcamp @ TheIronYard in Salt Lake City, Utah.
-              My Awesome Therapist is for the busy Massage Therapist
           </p>
               <br />
           <p>
-              My Awesome Therapist is for the busy Massage Therapist
-              For the busy Massage Therapist who needs a way to
+              My Awesome Therapist is for the busy Massage Therapist who needs a way to
               manage their schedule and their client database in a secure
               way, and who would like a web presence including a blog.
           </p>
