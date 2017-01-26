@@ -10,11 +10,11 @@ export default class About extends React.Component {
           <ul><br />
             <li><p>Home, About, Contact pages</p></li>
             <li><p>Services "menu"</p></li>
-            <li><p>Therapists' Blog</p></li>
+            <li><p>Therapists&#39; Blog</p></li>
           </ul><br />
           <p>Features (restricted by default):</p>
           <ul><br />
-            <li><p>Therapists' Schedule</p></li>
+            <li><p>Therapists&#39; Schedule</p></li>
             <li><p>Client Database</p></li>
             <li><p>Site content management</p></li>
           </ul><br />
