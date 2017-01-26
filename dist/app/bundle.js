@@ -39553,7 +39553,9 @@
 	          _react2.default.createElement(
 	            'p',
 	            null,
-	            'Final Project for Front End Engineering immersive Coding Bootcamp @ TheIronYard in Salt Lake City, Utah.'
+	            'Final Project for Front End Engineering immersive Coding Bootcamp @ TheIronYard in Salt Lake City, Utah.  ',
+	            _react2.default.createElement('br', null),
+	            'For testing the Scheduling function, you can log in using admin@demo.com / admin123'
 	          ),
 	          _react2.default.createElement('br', null),
 	          _react2.default.createElement(

@@ -12,7 +12,8 @@ export default class Main extends React.Component {
         <div id="appSubtitle">
           <p>
               Final Project for Front End Engineering immersive 
-              Coding Bootcamp @ TheIronYard in Salt Lake City, Utah.
+              Coding Bootcamp @ TheIronYard in Salt Lake City, Utah.  <br />
+              For testing the Scheduling function, you can log in using admin@demo.com / admin123
           </p>
               <br />
           <p>
